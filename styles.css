@@ -141,3 +141,45 @@ footer {
   color: #aaa;
 }
 
+
+/* Responsive Navigation */
+@media (max-width: 768px) {
+  .header-inner {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+
+  .nav-links {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    gap: 0.5rem;
+    margin-top: 1rem;
+  }
+
+  .nav-links a {
+    margin: 0;
+    padding: 0.5rem 0;
+    font-size: 1.1rem;
+  }
+}
+
+/* Responsive Hero Section */
+@media (max-width: 600px) {
+  .hero h2 {
+    font-size: 1.8rem;
+  }
+
+  .hero p {
+    font-size: 1rem;
+  }
+}
+
+/* Responsive Slideshow Arrows */
+@media (max-width: 768px) {
+  .prev, .next {
+    font-size: 18px;
+    padding: 10px;
+  }
+}
+
