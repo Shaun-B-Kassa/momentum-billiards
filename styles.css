@@ -53,3 +53,43 @@ footer {
     color: #aaa;
 }
 
+.slideshow-container {
+    max-width: 800px;
+    margin: 2rem auto;
+    position: relative;
+}
+
+.slideshow img.slide {
+    width: 100%;
+    display: none;
+    border: 2px solid #444;
+    border-radius: 8px;
+}
+
+.prev, .next {
+    cursor: pointer;
+    position: absolute;
+    top: 50%;
+    width: auto;
+    padding: 16px;
+    color: white;
+    font-weight: bold;
+    font-size: 24px;
+    user-select: none;
+    transform: translateY(-50%);
+    background-color: rgba(0,0,0,0.3);
+    border-radius: 50%;
+}
+
+.prev:hover, .next:hover {
+    background-color: rgba(0,0,0,0.6);
+}
+
+.prev {
+    left: 10px;
+}
+
+.next {
+    right: 10px;
+}
+
