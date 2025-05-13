@@ -81,45 +81,34 @@ a {
   color: #d4af37;
 }
 
-/* === Swiper.js Slideshow === */
+/* === Swiper.js Slideshow (Full Width) === */
 .slideshow-wrapper {
   position: relative;
-  overflow: hidden;
   width: 100%;
-  max-height: 70vh;
+  overflow: hidden;
   background-color: #000;
-  display: flex;
-  justify-content: center;
-  align-items: center;
 }
 
 .swiper {
-  width: 75%;
-  height: auto;
-  text-align: center;
+  width: 100vw;
+  height: 80vh;
+}
+
+.swiper-wrapper {
+  width: 100%;
+  height: 100%;
 }
 
 .swiper-slide {
-  display: flex;
-  justify-content: center;
-  align-items: center;
+  width: 100%;
+  height: 100%;
 }
 
 .swiper-slide img {
-  width: 90%;
-  height: auto;
-  object-fit: contain;
-  border-radius: 10px;
-}
-
-@media (max-width: 768px) {
-  .swiper {
-    width: 85%;
-  }
-
-  .swiper-slide img {
-    width: 95%;
-  }
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
 }
 
 /* Swiper Navigation */
@@ -129,6 +118,8 @@ a {
   background: rgba(0, 0, 0, 0.5);
   padding: 10px;
   border-radius: 50%;
+  top: 50%;
+  transform: translateY(-50%);
 }
 
 .swiper-button-prev:hover,
@@ -136,6 +127,7 @@ a {
   background: rgba(0, 0, 0, 0.8);
 }
 
+/* Swiper Pagination */
 .swiper-pagination-bullet {
   background: #bbb;
   opacity: 0.7;
@@ -144,6 +136,13 @@ a {
 .swiper-pagination-bullet-active {
   background: #f4f4f4;
   opacity: 1;
+}
+
+/* Responsive Height for Slideshow */
+@media (max-width: 768px) {
+  .swiper {
+    height: 50vh;
+  }
 }
 
 /* Map Styles */

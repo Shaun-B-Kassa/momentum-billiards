@@ -25,7 +25,7 @@
 </header>
 
 <section class="slideshow-wrapper">
-  <div class="swiper mySwiper">
+  <div class="swiper mySwiper fullwidth-slider">
     <div class="swiper-wrapper">
       <div class="swiper-slide"><img src="/images/photo1.jpg" alt="Photo 1"></div>
       <div class="swiper-slide"><img src="/images/photo2.jpg" alt="Photo 2"></div>
@@ -50,11 +50,25 @@
 <section id="location">
   <h3>Location</h3>
   <p>3815 Telegraph Ave, Oakland, CA 94609</p>
-  <a href="https://www.google.com/maps/place/3815+Telegraph+Ave,+Oakland,+CA+94609" target="_blank">
-    <img src="https://maps.googleapis.com/maps/api/staticmap?center=37.827219,-122.265021&zoom=15&size=600x300&maptype=roadmap&markers=color:red%7C37.827219,-122.265021&key=YOUR_GOOGLE_MAPS_API_KEY"
-         alt="Momentum Billiards Location" class="map-preview">
-  </a>
-  <p><a href="https://www.google.com/maps/place/3815+Telegraph+Ave,+Oakland,+CA+94609" target="_blank" class="map-link">View on Google Maps</a></p>
+
+  <!-- Embedded Google Map (no API key required) -->
+  <iframe
+    class="map-preview"
+    src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3153.3825053650263!2d-122.26719548467666!3d37.82721077975162!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x808f80c64ecfda8d%3A0x32070a79de3a70e4!2s3815%20Telegraph%20Ave%2C%20Oakland%2C%20CA%2094609!5e0!3m2!1sen!2sus!4v1715600000000!5m2!1sen!2sus"
+    width="600"
+    height="300"
+    style="border:0;"
+    allowfullscreen=""
+    loading="lazy"
+    referrerpolicy="no-referrer-when-downgrade">
+  </iframe>
+
+  <p>
+    <a href="https://www.google.com/maps/place/3815+Telegraph+Ave,+Oakland,+CA+94609"
+       target="_blank" class="map-link">
+      View on Google Maps
+    </a>
+  </p>
 </section>
 
 <section id="contact">
