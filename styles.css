@@ -192,3 +192,75 @@ footer {
   }
 }
 
+
+/* === Gallery Captions === */
+.caption {
+  text-align: center;
+  font-size: 1rem;
+  color: #fff;
+  margin-top: 5px;
+}
+
+/* === Lightbox for Enlarged Images === */
+.lightbox {
+  display: none;
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0, 0, 0, 0.8);
+  justify-content: center;
+  align-items: center;
+}
+
+.lightbox img {
+  max-width: 90%;
+  max-height: 90%;
+}
+
+.close {
+  position: absolute;
+  top: 20px;
+  right: 30px;
+  font-size: 2rem;
+  color: #fff;
+  cursor: pointer;
+}
+
+/* === Contact Form === */
+.contact-form {
+  max-width: 500px;
+  margin: auto;
+  text-align: left;
+}
+
+.contact-form label {
+  display: block;
+  margin-top: 10px;
+  font-weight: bold;
+}
+
+.contact-form input,
+.contact-form textarea {
+  width: 100%;
+  padding: 10px;
+  margin-top: 5px;
+  border-radius: 5px;
+  border: 1px solid #ccc;
+}
+
+.contact-form button {
+  margin-top: 15px;
+  padding: 10px 15px;
+  background-color: #b22222;
+  color: #fff;
+  border: none;
+  cursor: pointer;
+  font-size: 1rem;
+}
+
+.contact-form button:hover {
+  background-color: #d4af37;
+}
+
