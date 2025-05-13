@@ -44,7 +44,7 @@ a {
   gap: 20px;
 }
 
-/* === Slideshow with Fade Transitions === */
+/* === Swiper.js Slideshow === */
 .slideshow-wrapper {
   position: relative;
   overflow: hidden;
@@ -53,81 +53,40 @@ a {
   background-color: #000;
 }
 
-.carousel {
-  position: relative;
+.swiper {
   width: 100%;
   height: 100%;
 }
 
-.carousel-slide {
-  position: absolute;
-  top: 0;
-  left: 0;
+.swiper-slide img {
   width: 100%;
-  height: 100%;
-  opacity: 0;
-  transition: opacity 1s ease-in-out;
-  z-index: 0;
-}
-
-.carousel-slide.active {
-  opacity: 1;
-  z-index: 1;
-}
-
-.carousel-slide img {
-  width: 100%;
-  height: 100%;
+  height: auto;
   object-fit: cover;
 }
 
-/* Arrows */
-.carousel-btn {
-  position: absolute;
-  top: 50%;
-  transform: translateY(-50%);
-  background: rgba(0, 0, 0, 0.5);
+/* Swiper Navigation */
+.swiper-button-prev,
+.swiper-button-next {
   color: white;
-  border: none;
-  font-size: 2rem;
-  padding: 0.5rem 1rem;
-  cursor: pointer;
-  z-index: 2;
+  background: rgba(0, 0, 0, 0.5);
+  padding: 10px;
   border-radius: 50%;
 }
 
-.carousel-btn.prev {
-  left: 1rem;
-}
-
-.carousel-btn.next {
-  right: 1rem;
-}
-
-.carousel-btn:hover {
+.swiper-button-prev:hover,
+.swiper-button-next:hover {
   background: rgba(0, 0, 0, 0.8);
 }
 
-/* Dots */
-.carousel-dots {
-  text-align: center;
-  margin: 10px 0;
+/* Swiper Pagination */
+.swiper-pagination-bullet {
+  background: #bbb;
+  opacity: 0.7;
 }
 
-.dot {
-  display: inline-block;
-  width: 12px;
-  height: 12px;
-  margin: 0 5px;
-  background-color: #bbb;
-  border-radius: 50%;
-  cursor: pointer;
-  transition: background-color 0.3s;
-}
-
-.dot.active,
-.dot:hover {
-  background-color: #f4f4f4;
+.swiper-pagination-bullet-active {
+  background: #f4f4f4;
+  opacity: 1;
 }
 
 /* Sections */
@@ -165,11 +124,6 @@ footer {
 
   .slideshow-wrapper {
     max-height: 50vh;
-  }
-
-  .carousel-btn {
-    font-size: 1.5rem;
-    padding: 0.5rem;
   }
 
   section {

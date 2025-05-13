@@ -5,6 +5,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
   <title>Momentum Billiards</title>
   <link rel="stylesheet" href="styles.css" />
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@10/swiper-bundle.min.css"/>
 </head>
 <body>
 
@@ -12,6 +13,7 @@
   <div class="header-inner">
     <h1 class="logo">Momentum Billiards</h1>
     <nav class="nav">
+      <button class="menu-toggle" aria-label="Toggle menu">&#9776;</button>
       <div class="nav-links" id="nav-links">
         <a href="#hours">Hours</a>
         <a href="#rates">Rates</a>
@@ -22,16 +24,20 @@
   </div>
 </header>
 
-<!-- Slideshow with fade transition -->
+<!-- Swiper.js Slideshow -->
 <section class="slideshow-wrapper">
-  <div class="carousel" id="carousel">
-    <div class="carousel-slide active"><img src="/images/photo1.jpg" alt="Photo 1"></div>
-    <div class="carousel-slide"><img src="/images/photo2.jpg" alt="Photo 2"></div>
-    <div class="carousel-slide"><img src="/images/photo3.jpg" alt="Photo 3"></div>
+  <div class="swiper mySwiper">
+    <div class="swiper-wrapper">
+      <div class="swiper-slide"><img src="/images/photo1.jpg" alt="Photo 1"></div>
+      <div class="swiper-slide"><img src="/images/photo2.jpg" alt="Photo 2"></div>
+      <div class="swiper-slide"><img src="/images/photo3.jpg" alt="Photo 3"></div>
+    </div>
+    <!-- Navigation Arrows -->
+    <div class="swiper-button-prev"></div>
+    <div class="swiper-button-next"></div>
+    <!-- Pagination Dots -->
+    <div class="swiper-pagination"></div>
   </div>
-  <button class="carousel-btn prev" onclick="moveSlide(-1)">&#10094;</button>
-  <button class="carousel-btn next" onclick="moveSlide(1)">&#10095;</button>
-  <div class="carousel-dots" id="carousel-dots"></div>
 </section>
 
 <section id="hours">
@@ -60,50 +66,32 @@
   <p>&copy; 2025 Momentum Billiards</p>
 </footer>
 
+<script src="https://cdn.jsdelivr.net/npm/swiper@10/swiper-bundle.min.js"></script>
 <script>
-  const carousel = document.getElementById('carousel');
-  const slides = carousel.querySelectorAll('.carousel-slide');
-  const dotsContainer = document.getElementById('carousel-dots');
-  let index = 0;
-  let interval;
-
-  function showSlide(n) {
-    slides.forEach((slide, i) => {
-      slide.classList.toggle('active', i === n);
+  document.addEventListener("DOMContentLoaded", function () {
+    new Swiper(".mySwiper", {
+      loop: true,
+      autoplay: {
+        delay: 5000,
+        disableOnInteraction: false,
+      },
+      effect: "fade",
+      fadeEffect: { crossFade: true },
+      pagination: { el: ".swiper-pagination", clickable: true },
+      navigation: { nextEl: ".swiper-button-next", prevEl: ".swiper-button-prev" },
     });
-    dotsContainer.querySelectorAll('.dot').forEach((dot, i) => {
-      dot.classList.toggle('active', i === n);
+
+    // Mobile nav toggle
+    document.querySelector(".menu-toggle").addEventListener("click", () => {
+      document.getElementById("nav-links").classList.toggle("open");
     });
-  }
 
-  function moveSlide(n) {
-    index = (index + n + slides.length) % slides.length;
-    showSlide(index);
-    resetInterval();
-  }
-
-  function resetInterval() {
-    clearInterval(interval);
-    interval = setInterval(() => moveSlide(1), 5000);
-  }
-
-  function createDots() {
-    slides.forEach((_, i) => {
-      const dot = document.createElement('span');
-      dot.className = 'dot';
-      dot.onclick = () => {
-        index = i;
-        showSlide(index);
-        resetInterval();
-      };
-      dotsContainer.appendChild(dot);
+    // Auto-close mobile menu when a link is tapped
+    document.querySelectorAll("#nav-links a").forEach(link => {
+      link.addEventListener("click", () => {
+        document.getElementById("nav-links").classList.remove("open");
+      });
     });
-  }
-
-  document.addEventListener('DOMContentLoaded', () => {
-    createDots();
-    showSlide(index);
-    interval = setInterval(() => moveSlide(1), 5000);
   });
 </script>
 
