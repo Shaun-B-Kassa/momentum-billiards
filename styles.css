@@ -54,7 +54,41 @@ body {
   text-align: right;
 }
 
-/* === Swiper.js Slideshow (Reduced Height) === */
+/* Navigation Links (Hidden Until Clicked) */
+.nav-links {
+  display: none;
+  flex-direction: column;
+  position: absolute;
+  top: 70px;
+  right: 20px;
+  background: rgba(0, 0, 0, 0.95);
+  padding: 1rem;
+  border-radius: 8px;
+  width: 200px;
+  z-index: 100;
+}
+
+.nav-links.open {
+  display: flex;
+}
+
+.nav-links a {
+  text-align: center;
+  padding: 12px 0;
+  border-bottom: 1px solid #333;
+  text-transform: uppercase;
+  font-weight: bold;
+}
+
+.nav-links a:last-child {
+  border-bottom: none;
+}
+
+.nav-links a:hover {
+  color: #d4af37;
+}
+
+/* === Swiper.js Slideshow === */
 .slideshow-wrapper {
   position: relative;
   width: 100%;
@@ -83,16 +117,6 @@ section h2 {
   margin-bottom: 1rem;
 }
 
-/* === Map Styles === */
-.map-preview {
-  width: 100%;
-  max-width: 600px;
-  height: auto;
-  border-radius: 8px;
-  display: block;
-  margin: 10px auto;
-}
-
 /* === Section Styles === */
 section {
   padding: 2rem;
@@ -109,24 +133,5 @@ footer {
   font-size: 0.9rem;
   color: #aaa;
   width: 100%;
-}
-
-/* === Responsive Adjustments === */
-@media (max-width: 768px) {
-  .swiper {
-    height: 40vh; /* Further reduced for mobile */
-  }
-
-  section h2 {
-    font-size: 1.8rem;
-  }
-
-  .map-preview {
-    width: 90%;
-  }
-
-  section {
-    padding: 1.5rem;
-  }
 }
 
