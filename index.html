@@ -20,74 +20,79 @@
   </div>
 </header>
 
-  <section class="hero">
-    <h2>Oakland's Premier Pool Hall</h2>
-    <p>Great vibes, serious tables, and good times.</p>
-  </section>
+<section class="hero">
+  <h2>Oakland's Premier Pool Hall</h2>
+  <p>Great vibes, serious tables, and good times.</p>
+</section>
 
-  <!-- Slideshow section -->
-  <section class="slideshow-container">
-    <div class="slideshow">
-      <img class="slide" src="images/photo1.jpg" alt="Photo 1">
-      <img class="slide" src="images/photo2.jpg" alt="Photo 2">
-      <img class="slide" src="images/photo3.jpg" alt="Photo 3">
-      <a class="prev" onclick="plusSlides(-1)">&#10094;</a>
-      <a class="next" onclick="plusSlides(1)">&#10095;</a>
-    </div>
-  </section>
+<section class="slideshow-container">
+  <div class="slideshow">
+    <img class="slide" src="images/photo1.jpg" alt="Photo 1">
+    <img class="slide" src="images/photo2.jpg" alt="Photo 2">
+    <img class="slide" src="images/photo3.jpg" alt="Photo 3">
+    <a class="prev" onclick="plusSlides(-1)">&#10094;</a>
+    <a class="next" onclick="plusSlides(1)">&#10095;</a>
+  </div>
+</section>
 
-  <section id="hours">
-    <h3>Hours</h3>
-    <p>Mon–Thu: 4pm – Midnight<br>Fri–Sat: 4pm – 2am<br>Sun: 2pm – 11pm</p>
-  </section>
+<section id="hours">
+  <h3>Hours</h3>
+  <p>
+    Mon: 4 PM - 12 AM<br>
+    Tue: 4 PM - 12 AM<br>
+    Wed: 4 PM - 12 AM<br>
+    Thu: 4 PM - 12 AM<br>
+    Fri: 4 PM - 1 AM<br>
+    Sat: 2 PM - 1 AM<br>
+    Sun: 2 PM - 12 AM
+  </p>
+</section>
 
-  <section id="rates">
-    <h3>Pool Rates</h3>
-    <p>$10/hour (Weekdays before 5PM)<br>$15/hour (Evenings & Weekends)</p>
-  </section>
+<section id="rates">
+  <h3>Pool Rates</h3>
+  <p>$10/hour (Weekdays before 5PM)<br>$15/hour (Evenings & Weekends)</p>
+</section>
 
-  <section id="location">
-    <h3>Location</h3>
-    <p>3815 Telegraph Ave, Oakland, CA</p>
-    <iframe
-  src="https://www.google.com/maps/embed?pb=!4v1715614091764!6m8!1m7!1sCAoSLEFGMVFpcE5ORF9MN3B6blRsaGtSTnVScmZydzdxdVVvXzQwREU2dUVFQUht!2m2!1d37.8272322!2d-122.2644732!3f300!4f0!5f0.7820865974627469"
-  width="100%"
-  height="300"
-  style="border:0;"
-  allowfullscreen=""
-  loading="lazy"
-  referrerpolicy="no-referrer-when-downgrade"
-></iframe>
+<section id="location">
+  <h3>Location</h3>
+  <p>3815 Telegraph Ave, Oakland, CA 94609</p>
+  <iframe
+    src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3153.0468821826624!2d-122.26502082367868!3d37.827219571977065!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x808f8701e5987f97%3A0x1a72084709b5a8f!2sMomentum%20Billiards!5e0!3m2!1sen!2sus!4v1715649834260!5m2!1sen!2sus"
+    width="100%"
+    height="300"
+    style="border:0;"
+    allowfullscreen=""
+    loading="lazy"
+    referrerpolicy="no-referrer-when-downgrade"
+  ></iframe>
+</section>
 
-  </section>
+<section id="contact">
+  <h3>Contact</h3>
+  <p>Email: info@momentumbilliards.com<br>Phone: <a href="tel:+15102905606">(510) 290-5606</a></p>
+</section>
 
+<footer>
+  <p>&copy; 2025 Momentum Billiards</p>
+</footer>
 
-  <section id="contact">
-    <h3>Contact</h3>
-    <p>Email: info@momentumbilliards.com<br>Phone: (555) 123-4567</p>
-  </section>
-
-  <footer>
-    <p>&copy; 2025 Momentum Billiards</p>
-  </footer>
-
-  <script>
-    let slideIndex = 1;
-    const showSlides = (n) => {
-      let slides = document.querySelectorAll(".slide");
-      if (n > slides.length) slideIndex = 1;
-      if (n < 1) slideIndex = slides.length;
-      slides.forEach((s, i) => {
-        s.style.display = (i === slideIndex - 1) ? "block" : "none";
-      });
-    };
-    function plusSlides(n) {
-      showSlides(slideIndex += n);
-    }
-    document.addEventListener("DOMContentLoaded", () => {
-      showSlides(slideIndex);
+<script>
+  let slideIndex = 1;
+  const showSlides = (n) => {
+    let slides = document.querySelectorAll(".slide");
+    if (n > slides.length) slideIndex = 1;
+    if (n < 1) slideIndex = slides.length;
+    slides.forEach((s, i) => {
+      s.style.display = (i === slideIndex - 1) ? "block" : "none";
     });
-  </script>
+  };
+  function plusSlides(n) {
+    showSlides(slideIndex += n);
+  }
+  document.addEventListener("DOMContentLoaded", () => {
+    showSlides(slideIndex);
+  });
+</script>
 </body>
 </html>
 
