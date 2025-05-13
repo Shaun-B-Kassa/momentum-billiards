@@ -12,8 +12,9 @@
 <header class="site-header">
   <div class="header-inner">
     <h1 class="logo">Momentum Billiards</h1>
+    <button class="menu-toggle" aria-label="Toggle menu">&#9776;</button>
     <nav class="nav">
-      <div class="nav-links">
+      <div class="nav-links" id="nav-links">
         <a href="#hours">Hours</a>
         <a href="#rates">Rates</a>
         <a href="#location">Location</a>
@@ -23,7 +24,6 @@
   </div>
 </header>
 
-<!-- Swiper.js Slideshow -->
 <section class="slideshow-wrapper">
   <div class="swiper mySwiper">
     <div class="swiper-wrapper">
@@ -31,10 +31,8 @@
       <div class="swiper-slide"><img src="/images/photo2.jpg" alt="Photo 2"></div>
       <div class="swiper-slide"><img src="/images/photo3.jpg" alt="Photo 3"></div>
     </div>
-    <!-- Navigation Arrows -->
     <div class="swiper-button-prev"></div>
     <div class="swiper-button-next"></div>
-    <!-- Pagination Dots -->
     <div class="swiper-pagination"></div>
   </div>
 </section>
@@ -49,17 +47,13 @@
   <p>$10/hour (Weekdays before 5PM)<br>$15/hour (Evenings & Weekends)</p>
 </section>
 
-<!-- Improved Map Section -->
 <section id="location">
   <h3>Location</h3>
   <p>3815 Telegraph Ave, Oakland, CA 94609</p>
-  
-  <!-- Static Map Preview -->
   <a href="https://www.google.com/maps/place/3815+Telegraph+Ave,+Oakland,+CA+94609" target="_blank">
-    <img src="https://maps.googleapis.com/maps/api/staticmap?center=37.827219,-122.265021&zoom=15&size=600x300&maptype=roadmap&markers=color:red%7C37.827219,-122.265021&key=YOUR_GOOGLE_MAPS_API_KEY" 
+    <img src="https://maps.googleapis.com/maps/api/staticmap?center=37.827219,-122.265021&zoom=15&size=600x300&maptype=roadmap&markers=color:red%7C37.827219,-122.265021&key=YOUR_GOOGLE_MAPS_API_KEY"
          alt="Momentum Billiards Location" class="map-preview">
   </a>
-
   <p><a href="https://www.google.com/maps/place/3815+Telegraph+Ave,+Oakland,+CA+94609" target="_blank" class="map-link">View on Google Maps</a></p>
 </section>
 
@@ -85,6 +79,20 @@
       fadeEffect: { crossFade: true },
       pagination: { el: ".swiper-pagination", clickable: true },
       navigation: { nextEl: ".swiper-button-next", prevEl: ".swiper-button-prev" },
+    });
+
+    // Menu toggle
+    const toggle = document.querySelector(".menu-toggle");
+    const links = document.getElementById("nav-links");
+
+    toggle.addEventListener("click", () => {
+      links.classList.toggle("open");
+    });
+
+    document.querySelectorAll("#nav-links a").forEach(link => {
+      link.addEventListener("click", () => {
+        links.classList.remove("open");
+      });
     });
   });
 </script>
