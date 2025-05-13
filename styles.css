@@ -11,12 +11,12 @@ a {
   margin: 0 10px;
 }
 
-/* Header */
+/* === Header Navigation === */
 .site-header {
   position: sticky;
   top: 0;
   z-index: 1000;
-  background: rgba(0, 0, 0, 0.6);
+  background: rgba(0, 0, 0, 0.8);
   backdrop-filter: blur(6px);
   padding: 1rem 2rem;
   border-bottom: 1px solid rgba(255, 255, 255, 0.1);
@@ -39,12 +39,44 @@ a {
   margin: 0;
 }
 
+/* Navigation Menu */
 .nav-links {
   display: flex;
   gap: 20px;
 }
 
-/* === Swiper.js Slideshow === */
+.nav-links a {
+  font-size: 1rem;
+  padding: 10px 15px;
+  text-transform: uppercase;
+  font-weight: bold;
+  transition: color 0.3s ease-in-out;
+}
+
+.nav-links a:hover {
+  color: #d4af37;
+}
+
+/* === Mobile Navigation === */
+@media (max-width: 768px) {
+  .header-inner {
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+  }
+
+  .nav-links {
+    flex-direction: column;
+    gap: 10px;
+  }
+
+  .nav-links a {
+    font-size: 1.2rem;
+    padding: 12px;
+  }
+}
+
+/* === Swiper.js Slideshow (Responsive Images) === */
 .slideshow-wrapper {
   position: relative;
   overflow: hidden;
@@ -73,6 +105,17 @@ a {
   height: auto;
   object-fit: contain;
   border-radius: 10px;
+}
+
+/* === Mobile Image Adjustments === */
+@media (max-width: 768px) {
+  .swiper {
+    width: 85%;
+  }
+
+  .swiper-slide img {
+    width: 95%;
+  }
 }
 
 /* Swiper Navigation */
@@ -143,33 +186,6 @@ footer {
 
 /* Responsive adjustments */
 @media (max-width: 768px) {
-  .header-inner {
-    flex-direction: column;
-    align-items: center;
-  }
-
-  .logo {
-    font-size: 1.5rem;
-  }
-
-  .nav-links {
-    flex-direction: column;
-    align-items: center;
-    gap: 10px;
-  }
-
-  .slideshow-wrapper {
-    max-height: 50vh;
-  }
-
-  .swiper {
-    width: 85%;
-  }
-
-  .swiper-slide img {
-    width: 95%;
-  }
-
   .map-preview {
     width: 90%;
   }
