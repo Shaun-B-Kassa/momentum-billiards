@@ -40,7 +40,6 @@
   <div class="dots-container" id="dots-container"></div>
 </section>
 
-
 <section id="hours">
   <h3>Hours</h3>
   <p>Mon–Thu: 4 PM – 12 AM<br>Fri: 4 PM – 1 AM<br>Sat: 2 PM – 1 AM<br>Sun: 2 PM – 12 AM</p>
@@ -70,23 +69,24 @@
 <script>
   let slideIndex = 0;
   let autoSlideInterval;
-  const slides = document.querySelectorAll(".slide");
-  const dotsContainer = document.getElementById("dots-container");
-
-  function showSlides() {
-    slides.forEach((slide, i) => {
-      slide.classList.toggle("active", i === slideIndex);
-    });
-    document.querySelectorAll('.dot').forEach((dot, i) => {
-      dot.classList.toggle('active', i === slideIndex);
-    });
-  }
 
   function plusSlides(n) {
     clearInterval(autoSlideInterval);
+    const slides = document.querySelectorAll(".slide");
     slideIndex = (slideIndex + n + slides.length) % slides.length;
     showSlides();
     startAutoSlide();
+  }
+
+  function showSlides() {
+    const slides = document.querySelectorAll(".slide");
+    const dots = document.querySelectorAll(".dot");
+    slides.forEach((slide, i) => {
+      slide.classList.toggle("active", i === slideIndex);
+    });
+    dots.forEach((dot, i) => {
+      dot.classList.toggle("active", i === slideIndex);
+    });
   }
 
   function startAutoSlide() {
@@ -94,6 +94,8 @@
   }
 
   function createDots() {
+    const slides = document.querySelectorAll(".slide");
+    const dotsContainer = document.getElementById("dots-container");
     slides.forEach((_, i) => {
       const dot = document.createElement("span");
       dot.classList.add("dot");
@@ -105,25 +107,24 @@
     });
   }
 
-  // Touch support
-  let touchStartX = 0;
-  let touchEndX = 0;
-
-  function handleGesture() {
-    if (touchEndX < touchStartX - 50) plusSlides(1);
-    if (touchEndX > touchStartX + 50) plusSlides(-1);
-  }
-
   document.addEventListener("DOMContentLoaded", () => {
     createDots();
     showSlides();
     startAutoSlide();
 
+    // Touch support
     const slideshow = document.getElementById("slideshow");
-    slideshow.addEventListener("touchstart", e => touchStartX = e.changedTouches[0].screenX);
+    let touchStartX = 0;
+    let touchEndX = 0;
+
+    slideshow.addEventListener("touchstart", e => {
+      touchStartX = e.changedTouches[0].screenX;
+    });
+
     slideshow.addEventListener("touchend", e => {
       touchEndX = e.changedTouches[0].screenX;
-      handleGesture();
+      if (touchEndX < touchStartX - 50) plusSlides(1);
+      if (touchEndX > touchStartX + 50) plusSlides(-1);
     });
   });
 </script>
