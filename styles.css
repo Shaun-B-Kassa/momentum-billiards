@@ -88,12 +88,14 @@ body {
   color: #d4af37;
 }
 
-/* === Swiper.js Slideshow === */
+/* === Swiper.js Slideshow (No Padding, Fully Connected to Header & Hours) === */
 .slideshow-wrapper {
   position: relative;
   width: 100%;
   overflow: hidden;
   background-color: #000;
+  margin: 0; /* Remove any margin */
+  padding: 0; /* Remove any padding */
 }
 
 .swiper {
@@ -106,6 +108,8 @@ body {
   height: 100%;
   object-fit: cover;
   display: block;
+  margin: 0; /* Ensure no spacing */
+  padding: 0; /* Ensure no spacing */
 }
 
 /* === Section Headers (Larger) === */
@@ -156,6 +160,7 @@ section {
   text-align: center;
   border-bottom: 1px solid #333;
   width: 100%;
+  margin: 0; /* Ensure sections are fully connected */
 }
 
 /* === Footer === */
@@ -191,7 +196,6 @@ footer {
     padding: 1.5rem;
   }
 }
-
 
 /* === Gallery Captions === */
 .caption {
