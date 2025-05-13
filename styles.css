@@ -44,7 +44,7 @@ a {
   gap: 20px;
 }
 
-/* === Swiper.js Slideshow (Wider, Centered Images) === */
+/* === Swiper.js Slideshow === */
 .slideshow-wrapper {
   position: relative;
   overflow: hidden;
@@ -57,7 +57,7 @@ a {
 }
 
 .swiper {
-  width: 75%; /* Make the slideshow wider */
+  width: 75%;
   height: auto;
   text-align: center;
 }
@@ -69,10 +69,10 @@ a {
 }
 
 .swiper-slide img {
-  width: 90%; /* Increase horizontal size */
+  width: 90%;
   height: auto;
-  object-fit: contain; /* Ensure images fit properly */
-  border-radius: 10px; /* Optional: Add rounded corners */
+  object-fit: contain;
+  border-radius: 10px;
 }
 
 /* Swiper Navigation */
@@ -98,6 +98,31 @@ a {
 .swiper-pagination-bullet-active {
   background: #f4f4f4;
   opacity: 1;
+}
+
+/* === Improved Map Styling === */
+.map-preview {
+  width: 100%;
+  max-width: 600px;
+  height: auto;
+  border-radius: 8px;
+  display: block;
+  margin: 10px auto;
+}
+
+.map-link {
+  display: inline-block;
+  margin-top: 10px;
+  padding: 8px 12px;
+  background-color: #b22222;
+  color: #fff;
+  text-decoration: none;
+  border-radius: 5px;
+  font-weight: bold;
+}
+
+.map-link:hover {
+  background-color: #d4af37;
 }
 
 /* Sections */
@@ -138,11 +163,15 @@ footer {
   }
 
   .swiper {
-    width: 85%; /* Adjust for mobile */
+    width: 85%;
   }
 
   .swiper-slide img {
-    width: 95%; /* Slightly larger on mobile */
+    width: 95%;
+  }
+
+  .map-preview {
+    width: 90%;
   }
 
   section {
