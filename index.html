@@ -10,43 +10,33 @@
 
 <header class="site-header">
   <div class="header-inner">
-    <div class="logo-container">
-      <img src="images/pool_house_icon.jpg" alt="Pool House Icon" class="logo-icon" />
-      <h1 class="logo">Momentum Billiards</h1>
-    </div>
+    <h1 class="logo">Momentum Billiards</h1>
     <nav class="nav">
-  <button class="menu-toggle" aria-label="Toggle menu">
-    &#9776;
-  </button>
-  <div class="nav-links" id="nav-links">
-    <a href="#hours">Hours</a>
-    <a href="#rates">Rates</a>
-    <a href="#location">Location</a>
-    <a href="#contact">Contact</a>
-  </div>
-</nav>
-
+      <button class="menu-toggle" aria-label="Toggle menu">&#9776;</button>
+      <div class="nav-links" id="nav-links">
+        <a href="#hours">Hours</a>
+        <a href="#rates">Rates</a>
+        <a href="#location">Location</a>
+        <a href="#contact">Contact</a>
+      </div>
+    </nav>
   </div>
 </header>
 
+<!-- Slideshow Section -->
 <section class="slideshow-container">
   <div class="slideshow" id="slideshow">
-    <img class="slide" src="images/photo1.jpg" alt="Photo 1" loading="lazy">
-    <img class="slide" src="images/photo2.jpg" alt="Photo 2" loading="lazy">
-    <img class="slide" src="images/photo3.jpg" alt="Photo 3" loading="lazy">
-    <a class="prev" onclick="plusSlides(-1)">&#10094;</a>
-    <a class="next" onclick="plusSlides(1)">&#10095;</a>
+    <img class="slide fade" src="images/photo1.jpg" alt="Photo 1" loading="lazy">
+    <img class="slide fade" src="images/photo2.jpg" alt="Photo 2" loading="lazy">
+    <img class="slide fade" src="images/photo3.jpg" alt="Photo 3" loading="lazy">
   </div>
+  <a class="prev" onclick="plusSlides(-1)">&#10094;</a>
+  <a class="next" onclick="plusSlides(1)">&#10095;</a>
 </section>
 
 <section id="hours">
   <h3>Hours</h3>
-  <p>
-    Mon–Thu: 4 PM – 12 AM<br>
-    Fri: 4 PM – 1 AM<br>
-    Sat: 2 PM – 1 AM<br>
-    Sun: 2 PM – 12 AM
-  </p>
+  <p>Mon–Thu: 4 PM – 12 AM<br>Fri: 4 PM – 1 AM<br>Sat: 2 PM – 1 AM<br>Sun: 2 PM – 12 AM</p>
 </section>
 
 <section id="rates">
@@ -57,15 +47,8 @@
 <section id="location">
   <h3>Location</h3>
   <p>3815 Telegraph Ave, Oakland, CA 94609</p>
-  <iframe
-    src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3153.0468821826624!2d-122.26502082367868!3d37.827219571977065!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x808f8701e5987f97%3A0x1a72084709b5a8f!2sMomentum%20Billiards!5e0!3m2!1sen!2sus!4v1715649834260!5m2!1sen!2sus"
-    width="100%"
-    height="300"
-    style="border:0;"
-    allowfullscreen=""
-    loading="lazy"
-    referrerpolicy="no-referrer-when-downgrade"
-  ></iframe>
+  <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3153.0468821826624!2d-122.26502082367868!3d37.827219571977065!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x808f8701e5987f97%3A0x1a72084709b5a8f!2sMomentum%20Billiards!5e0!3m2!1sen!2sus!4v1715649834260!5m2!1sen!2sus"
+    width="100%" height="300" style="border:0;" allowfullscreen="" loading="lazy"></iframe>
 </section>
 
 <section id="contact">
@@ -78,66 +61,33 @@
 </footer>
 
 <script>
-  let slideIndex = 1;
+  let slideIndex = 0;
   let autoSlideInterval;
 
-  const showSlides = (n) => {
+  function showSlides() {
     const slides = document.querySelectorAll(".slide");
-    if (n > slides.length) slideIndex = 1;
-    if (n < 1) slideIndex = slides.length;
-    slides.forEach((s, i) => {
-      s.style.display = (i === slideIndex - 1) ? "block" : "none";
+    slides.forEach((slide, i) => {
+      slide.style.opacity = (i === slideIndex) ? "1" : "0";
     });
-  };
+  }
 
   function plusSlides(n) {
     clearInterval(autoSlideInterval);
-    showSlides(slideIndex += n);
+    slideIndex = (slideIndex + n + slides.length) % slides.length;
+    showSlides();
     startAutoSlide();
   }
 
   function startAutoSlide() {
     autoSlideInterval = setInterval(() => {
       plusSlides(1);
-    }, 5000); // 5 seconds
+    }, 5000);
   }
 
   document.addEventListener("DOMContentLoaded", () => {
-    showSlides(slideIndex);
+    showSlides();
     startAutoSlide();
-
-    // Touch swipe support
-    let touchStartX = 0;
-    let touchEndX = 0;
-    const slideshow = document.getElementById("slideshow");
-
-    slideshow.addEventListener("touchstart", (e) => {
-      touchStartX = e.changedTouches[0].screenX;
-    });
-
-    slideshow.addEventListener("touchend", (e) => {
-      touchEndX = e.changedTouches[0].screenX;
-      handleGesture();
-    });
-
-    const handleGesture = () => {
-      if (touchEndX < touchStartX - 40) plusSlides(1); // swipe left
-      if (touchEndX > touchStartX + 40) plusSlides(-1); // swipe right
-    };
   });
-
-  // Mobile nav toggle
-document.querySelector('.menu-toggle').addEventListener('click', () => {
-  document.getElementById('nav-links').classList.toggle('open');
-});
-
-  // Auto-close mobile menu when a link is tapped
-document.querySelectorAll('#nav-links a').forEach(link => {
-  link.addEventListener('click', () => {
-    document.getElementById('nav-links').classList.remove('open');
-  });
-});
-
 </script>
 
 </body>
