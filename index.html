@@ -22,22 +22,16 @@
   </div>
 </header>
 
-<!-- Slideshow Section -->
-<section class="slideshow-container">
-  <div class="slideshow" id="slideshow">
-    <div class="slide">
-      <img src="images/photo1.jpg" alt="Photo 1" loading="lazy">
-    </div>
-    <div class="slide">
-      <img src="images/photo2.jpg" alt="Photo 2" loading="lazy">
-    </div>
-    <div class="slide">
-      <img src="images/photo3.jpg" alt="Photo 3" loading="lazy">
-    </div>
+<!-- Slideshow with fade transition -->
+<section class="slideshow-wrapper">
+  <div class="carousel" id="carousel">
+    <div class="carousel-slide active"><img src="images/photo1.jpg" alt="Photo 1"></div>
+    <div class="carousel-slide"><img src="images/photo2.jpg" alt="Photo 2"></div>
+    <div class="carousel-slide"><img src="images/photo3.jpg" alt="Photo 3"></div>
   </div>
-  <a class="prev" onclick="plusSlides(-1)">&#10094;</a>
-  <a class="next" onclick="plusSlides(1)">&#10095;</a>
-  <div class="dots-container" id="dots-container"></div>
+  <button class="carousel-btn prev" onclick="moveSlide(-1)">&#10094;</button>
+  <button class="carousel-btn next" onclick="moveSlide(1)">&#10095;</button>
+  <div class="carousel-dots" id="carousel-dots"></div>
 </section>
 
 <section id="hours">
@@ -67,65 +61,49 @@
 </footer>
 
 <script>
-  let slideIndex = 0;
-  let autoSlideInterval;
+  const carousel = document.getElementById('carousel');
+  const slides = carousel.querySelectorAll('.carousel-slide');
+  const dotsContainer = document.getElementById('carousel-dots');
+  let index = 0;
+  let interval;
 
-  function plusSlides(n) {
-    clearInterval(autoSlideInterval);
-    const slides = document.querySelectorAll(".slide");
-    slideIndex = (slideIndex + n + slides.length) % slides.length;
-    showSlides();
-    startAutoSlide();
-  }
-
-  function showSlides() {
-    const slides = document.querySelectorAll(".slide");
-    const dots = document.querySelectorAll(".dot");
+  function showSlide(n) {
     slides.forEach((slide, i) => {
-      slide.classList.toggle("active", i === slideIndex);
+      slide.classList.toggle('active', i === n);
     });
-    dots.forEach((dot, i) => {
-      dot.classList.toggle("active", i === slideIndex);
+    dotsContainer.querySelectorAll('.dot').forEach((dot, i) => {
+      dot.classList.toggle('active', i === n);
     });
   }
 
-  function startAutoSlide() {
-    autoSlideInterval = setInterval(() => plusSlides(1), 5000);
+  function moveSlide(n) {
+    index = (index + n + slides.length) % slides.length;
+    showSlide(index);
+    resetInterval();
+  }
+
+  function resetInterval() {
+    clearInterval(interval);
+    interval = setInterval(() => moveSlide(1), 5000);
   }
 
   function createDots() {
-    const slides = document.querySelectorAll(".slide");
-    const dotsContainer = document.getElementById("dots-container");
     slides.forEach((_, i) => {
-      const dot = document.createElement("span");
-      dot.classList.add("dot");
-      dot.addEventListener("click", () => {
-        slideIndex = i;
-        showSlides();
-      });
+      const dot = document.createElement('span');
+      dot.className = 'dot';
+      dot.onclick = () => {
+        index = i;
+        showSlide(index);
+        resetInterval();
+      };
       dotsContainer.appendChild(dot);
     });
   }
 
-  document.addEventListener("DOMContentLoaded", () => {
+  document.addEventListener('DOMContentLoaded', () => {
     createDots();
-    showSlides();
-    startAutoSlide();
-
-    // Touch support
-    const slideshow = document.getElementById("slideshow");
-    let touchStartX = 0;
-    let touchEndX = 0;
-
-    slideshow.addEventListener("touchstart", e => {
-      touchStartX = e.changedTouches[0].screenX;
-    });
-
-    slideshow.addEventListener("touchend", e => {
-      touchEndX = e.changedTouches[0].screenX;
-      if (touchEndX < touchStartX - 50) plusSlides(1);
-      if (touchEndX > touchStartX + 50) plusSlides(-1);
-    });
+    showSlide(index);
+    interval = setInterval(() => moveSlide(1), 5000);
   });
 </script>
 
