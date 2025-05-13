@@ -128,19 +128,6 @@ footer {
   color: #aaa;
 }
 
-.caption {
-  position: absolute;
-  bottom: 8px;
-  left: 50%;
-  transform: translateX(-50%);
-  background-color: rgba(0, 0, 0, 0.6);
-  color: #fff;
-  padding: 8px 16px;
-  border-radius: 8px;
-  font-size: 1rem;
-  opacity: 0.9;
-  transition: opacity 0.5s ease;
-}
 
 .dots-container {
   text-align: center;
