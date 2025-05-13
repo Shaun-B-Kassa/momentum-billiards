@@ -3,7 +3,15 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-  <title>Momentum Billiards</title>
+  <title>Momentum Billiards - Pool Hall & Lounge</title>
+  <meta name="description" content="Momentum Billiards offers an exciting experience with professional-grade pool tables, a relaxing lounge, and thrilling matches.">
+  
+  <!-- Open Graph Meta Tags for Social Sharing -->
+  <meta property="og:title" content="Momentum Billiards - Pool Hall & Lounge" />
+  <meta property="og:image" content="/images/preview.jpg" />
+  <meta property="og:description" content="Experience exciting pool matches and relaxing lounges at Momentum Billiards." />
+  <meta property="og:url" content="https://momentumbilliards.com" />
+  
   <link rel="stylesheet" href="styles.css" />
   <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@10/swiper-bundle.min.css"/>
 </head>
@@ -12,7 +20,7 @@
 <header class="site-header">
   <div class="header-inner">
     <h1 class="logo">Momentum Billiards</h1>
-    <button class="menu-toggle" aria-label="Toggle menu">&#9776;</button>
+    <button class="menu-toggle" aria-label="Toggle menu" tabindex="0">&#9776;</button>
     <nav class="nav">
       <div class="nav-links" id="nav-links">
         <a href="#slideshow">Galleries</a>
@@ -25,20 +33,20 @@
   </div>
 </header>
 
-<!-- Gallery Section with Captions & Click-to-Enlarge -->
+<!-- Gallery Section with Captions, Click-to-Enlarge, Hover Effects -->
 <section id="slideshow" class="slideshow-wrapper">
   <div class="swiper mySwiper fullwidth-slider">
     <div class="swiper-wrapper">
       <div class="swiper-slide">
-        <img src="/images/photo1.jpg" alt="Photo 1" onclick="openLightbox('/images/photo1.jpg')">
+        <img src="/images/photo1.jpg" alt="Photo 1" loading="lazy" onclick="openLightbox('/images/photo1.jpg')">
         <p class="caption">Exciting pool matches at Momentum Billiards</p>
       </div>
       <div class="swiper-slide">
-        <img src="/images/photo2.jpg" alt="Photo 2" onclick="openLightbox('/images/photo2.jpg')">
+        <img src="/images/photo2.jpg" alt="Photo 2" loading="lazy" onclick="openLightbox('/images/photo2.jpg')">
         <p class="caption">Relaxing lounge area for players</p>
       </div>
       <div class="swiper-slide">
-        <img src="/images/photo3.jpg" alt="Photo 3" onclick="openLightbox('/images/photo3.jpg')">
+        <img src="/images/photo3.jpg" alt="Photo 3" loading="lazy" onclick="openLightbox('/images/photo3.jpg')">
         <p class="caption">Professional-grade pool tables</p>
       </div>
     </div>
@@ -108,6 +116,16 @@
 
 <footer>
   <p>&copy; 2025 Momentum Billiards</p>
+  <div class="footer-links">
+    <a href="#">Privacy Policy</a> | 
+    <a href="#">Terms of Service</a> | 
+    <a href="#">FAQ</a>
+  </div>
+  <div class="social-icons">
+    <a href="#"><img src="/icons/facebook.svg" alt="Facebook"></a>
+    <a href="#"><img src="/icons/instagram.svg" alt="Instagram"></a>
+    <a href="#"><img src="/icons/twitter.svg" alt="Twitter"></a>
+  </div>
 </footer>
 
 <script src="https://cdn.jsdelivr.net/npm/swiper@10/swiper-bundle.min.js"></script>
@@ -123,32 +141,29 @@
       fadeEffect: { crossFade: true },
       pagination: { el: ".swiper-pagination", clickable: true },
       navigation: { nextEl: ".swiper-button-next", prevEl: ".swiper-button-prev" },
+      lazy: true, // Lazy loading for images
     });
 
-    // Menu toggle
-    const toggle = document.querySelector(".menu-toggle");
-    const links = document.getElementById("nav-links");
-
-    toggle.addEventListener("click", () => {
-      links.classList.toggle("open");
-    });
-
-    document.querySelectorAll("#nav-links a").forEach(link => {
-      link.addEventListener("click", () => {
-        links.classList.remove("open");
+    // Smooth scrolling for navigation links
+    document.querySelectorAll("a[href^='#']").forEach(anchor => {
+      anchor.addEventListener("click", function (e) {
+        e.preventDefault();
+        document.querySelector(this.getAttribute("href")).scrollIntoView({
+          behavior: "smooth"
+        });
       });
     });
+
+    // Lightbox functionality
+    function openLightbox(imageSrc) {
+      document.getElementById("lightbox-img").src = imageSrc;
+      document.getElementById("lightbox").style.display = "flex";
+    }
+
+    function closeLightbox() {
+      document.getElementById("lightbox").style.display = "none";
+    }
   });
-
-  // Lightbox functionality
-  function openLightbox(imageSrc) {
-    document.getElementById("lightbox-img").src = imageSrc;
-    document.getElementById("lightbox").style.display = "flex";
-  }
-
-  function closeLightbox() {
-    document.getElementById("lightbox").style.display = "none";
-  }
 </script>
 
 </body>
