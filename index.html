@@ -24,14 +24,25 @@
 </header>
 
 <!-- Slideshow Section -->
+
 <section class="slideshow-container">
   <div class="slideshow" id="slideshow">
-    <img class="slide fade" src="images/photo1.jpg" alt="Photo 1" loading="lazy">
-    <img class="slide fade" src="images/photo2.jpg" alt="Photo 2" loading="lazy">
-    <img class="slide fade" src="images/photo3.jpg" alt="Photo 3" loading="lazy">
+    <div class="slide fade">
+      <img src="images/photo1.jpg" alt="Photo 1" loading="lazy">
+      <div class="caption">Spacious modern tables</div>
+    </div>
+    <div class="slide fade">
+      <img src="images/photo2.jpg" alt="Photo 2" loading="lazy">
+      <div class="caption">Lounge and bar area</div>
+    </div>
+    <div class="slide fade">
+      <img src="images/photo3.jpg" alt="Photo 3" loading="lazy">
+      <div class="caption">Tournaments and events</div>
+    </div>
   </div>
   <a class="prev" onclick="plusSlides(-1)">&#10094;</a>
   <a class="next" onclick="plusSlides(1)">&#10095;</a>
+  <div class="dots-container" id="dots-container"></div>
 </section>
 
 <section id="hours">
@@ -63,11 +74,15 @@
 <script>
   let slideIndex = 0;
   let autoSlideInterval;
+  const slides = document.querySelectorAll(".slide");
+  const dotsContainer = document.getElementById("dots-container");
 
   function showSlides() {
-    const slides = document.querySelectorAll(".slide");
     slides.forEach((slide, i) => {
       slide.style.opacity = (i === slideIndex) ? "1" : "0";
+    });
+    document.querySelectorAll('.dot').forEach((dot, i) => {
+      dot.classList.toggle('active', i === slideIndex);
     });
   }
 
@@ -79,29 +94,54 @@
   }
 
   function startAutoSlide() {
-    autoSlideInterval = setInterval(() => {
-      plusSlides(1);
-    }, 5000);
+    autoSlideInterval = setInterval(() => plusSlides(1), 5000);
+  }
+
+  function createDots() {
+    slides.forEach((_, i) => {
+      const dot = document.createElement("span");
+      dot.classList.add("dot");
+      dot.addEventListener("click", () => {
+        slideIndex = i;
+        showSlides();
+      });
+      dotsContainer.appendChild(dot);
+    });
+  }
+
+  // Touch support
+  let touchStartX = 0;
+  let touchEndX = 0;
+
+  function handleGesture() {
+    if (touchEndX < touchStartX - 50) plusSlides(1);
+    if (touchEndX > touchStartX + 50) plusSlides(-1);
   }
 
   document.addEventListener("DOMContentLoaded", () => {
+    createDots();
     showSlides();
     startAutoSlide();
-  });
 
-  // Mobile nav toggle
-  document.querySelector('.menu-toggle').addEventListener('click', () => {
-    document.getElementById('nav-links').classList.toggle('open');
-  });
+    const slideshow = document.getElementById("slideshow");
+    slideshow.addEventListener("touchstart", e => touchStartX = e.changedTouches[0].screenX);
+    slideshow.addEventListener("touchend", e => {
+      touchEndX = e.changedTouches[0].screenX;
+      handleGesture();
+    });
 
-  // Auto-close mobile menu when a link is tapped
-  document.querySelectorAll('#nav-links a').forEach(link => {
-    link.addEventListener('click', () => {
-      document.getElementById('nav-links').classList.remove('open');
+    // Mobile nav toggle
+    document.querySelector('.menu-toggle').addEventListener('click', () => {
+      document.getElementById('nav-links').classList.toggle('open');
+    });
+
+    document.querySelectorAll('#nav-links a').forEach(link => {
+      link.addEventListener('click', () => {
+        document.getElementById('nav-links').classList.remove('open');
+      });
     });
   });
 </script>
-
 </body>
 </html>
 
