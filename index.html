@@ -14,21 +14,26 @@
       <img src="images/pool_house_icon.jpg" alt="Pool House Icon" class="logo-icon" />
       <h1 class="logo">Momentum Billiards</h1>
     </div>
-    <nav class="nav-links">
-      <a href="#hours">Hours</a>
-      <a href="#rates">Rates</a>
-      <a href="#location">Location</a>
-      <a href="#contact">Contact</a>
-    </nav>
+    <nav class="nav">
+  <button class="menu-toggle" aria-label="Toggle menu">
+    &#9776;
+  </button>
+  <div class="nav-links" id="nav-links">
+    <a href="#hours">Hours</a>
+    <a href="#rates">Rates</a>
+    <a href="#location">Location</a>
+    <a href="#contact">Contact</a>
+  </div>
+</nav>
+
   </div>
 </header>
 
-
 <section class="slideshow-container">
-  <div class="slideshow">
-    <img class="slide" src="images/photo1.jpg" alt="Photo 1">
-    <img class="slide" src="images/photo2.jpg" alt="Photo 2">
-    <img class="slide" src="images/photo3.jpg" alt="Photo 3">
+  <div class="slideshow" id="slideshow">
+    <img class="slide" src="images/photo1.jpg" alt="Photo 1" loading="lazy">
+    <img class="slide" src="images/photo2.jpg" alt="Photo 2" loading="lazy">
+    <img class="slide" src="images/photo3.jpg" alt="Photo 3" loading="lazy">
     <a class="prev" onclick="plusSlides(-1)">&#10094;</a>
     <a class="next" onclick="plusSlides(1)">&#10095;</a>
   </div>
@@ -37,13 +42,10 @@
 <section id="hours">
   <h3>Hours</h3>
   <p>
-    Mon: 4 PM - 12 AM<br>
-    Tue: 4 PM - 12 AM<br>
-    Wed: 4 PM - 12 AM<br>
-    Thu: 4 PM - 12 AM<br>
-    Fri: 4 PM - 1 AM<br>
-    Sat: 2 PM - 1 AM<br>
-    Sun: 2 PM - 12 AM
+    Mon–Thu: 4 PM – 12 AM<br>
+    Fri: 4 PM – 1 AM<br>
+    Sat: 2 PM – 1 AM<br>
+    Sun: 2 PM – 12 AM
   </p>
 </section>
 
@@ -77,21 +79,67 @@
 
 <script>
   let slideIndex = 1;
+  let autoSlideInterval;
+
   const showSlides = (n) => {
-    let slides = document.querySelectorAll(".slide");
+    const slides = document.querySelectorAll(".slide");
     if (n > slides.length) slideIndex = 1;
     if (n < 1) slideIndex = slides.length;
     slides.forEach((s, i) => {
       s.style.display = (i === slideIndex - 1) ? "block" : "none";
     });
   };
+
   function plusSlides(n) {
+    clearInterval(autoSlideInterval);
     showSlides(slideIndex += n);
+    startAutoSlide();
   }
+
+  function startAutoSlide() {
+    autoSlideInterval = setInterval(() => {
+      plusSlides(1);
+    }, 5000); // 5 seconds
+  }
+
   document.addEventListener("DOMContentLoaded", () => {
     showSlides(slideIndex);
+    startAutoSlide();
+
+    // Touch swipe support
+    let touchStartX = 0;
+    let touchEndX = 0;
+    const slideshow = document.getElementById("slideshow");
+
+    slideshow.addEventListener("touchstart", (e) => {
+      touchStartX = e.changedTouches[0].screenX;
+    });
+
+    slideshow.addEventListener("touchend", (e) => {
+      touchEndX = e.changedTouches[0].screenX;
+      handleGesture();
+    });
+
+    const handleGesture = () => {
+      if (touchEndX < touchStartX - 40) plusSlides(1); // swipe left
+      if (touchEndX > touchStartX + 40) plusSlides(-1); // swipe right
+    };
   });
+
+  // Mobile nav toggle
+document.querySelector('.menu-toggle').addEventListener('click', () => {
+  document.getElementById('nav-links').classList.toggle('open');
+});
+
+  // Auto-close mobile menu when a link is tapped
+document.querySelectorAll('#nav-links a').forEach(link => {
+  link.addEventListener('click', () => {
+    document.getElementById('nav-links').classList.remove('open');
+  });
+});
+
 </script>
+
 </body>
 </html>
 
