@@ -44,7 +44,7 @@ a {
   gap: 20px;
 }
 
-/* === Swiper.js Slideshow (Centered & Smaller Images) === */
+/* === Swiper.js Slideshow (Wider, Centered Images) === */
 .slideshow-wrapper {
   position: relative;
   overflow: hidden;
@@ -57,7 +57,7 @@ a {
 }
 
 .swiper {
-  width: 60%; /* Make the slideshow smaller */
+  width: 75%; /* Make the slideshow wider */
   height: auto;
   text-align: center;
 }
@@ -69,7 +69,7 @@ a {
 }
 
 .swiper-slide img {
-  width: 80%; /* Reduce image size */
+  width: 90%; /* Increase horizontal size */
   height: auto;
   object-fit: contain; /* Ensure images fit properly */
   border-radius: 10px; /* Optional: Add rounded corners */
@@ -138,11 +138,11 @@ footer {
   }
 
   .swiper {
-    width: 80%; /* Adjust for mobile */
+    width: 85%; /* Adjust for mobile */
   }
 
   .swiper-slide img {
-    width: 90%; /* Slightly larger on mobile */
+    width: 95%; /* Slightly larger on mobile */
   }
 
   section {
