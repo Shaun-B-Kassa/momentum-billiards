@@ -38,16 +38,16 @@ a {
   margin: 0;
 }
 
-/* Always visible hamburger icon */
 .menu-toggle {
   font-size: 2rem;
   background: none;
   border: none;
   color: #f4f4f4;
   cursor: pointer;
+  display: block;
 }
 
-/* Navigation Links (dropdown style) */
+/* Navigation Links (dropdown) */
 .nav-links {
   display: none;
   flex-direction: column;
@@ -81,7 +81,7 @@ a {
   color: #d4af37;
 }
 
-/* === Swiper.js Slideshow (Full Width) === */
+/* === Swiper.js Slideshow === */
 .slideshow-wrapper {
   position: relative;
   width: 100%;
@@ -94,16 +94,6 @@ a {
   height: 80vh;
 }
 
-.swiper-wrapper {
-  width: 100%;
-  height: 100%;
-}
-
-.swiper-slide {
-  width: 100%;
-  height: 100%;
-}
-
 .swiper-slide img {
   width: 100%;
   height: 100%;
@@ -111,7 +101,6 @@ a {
   display: block;
 }
 
-/* Swiper Navigation */
 .swiper-button-prev,
 .swiper-button-next {
   color: white;
@@ -127,7 +116,6 @@ a {
   background: rgba(0, 0, 0, 0.8);
 }
 
-/* Swiper Pagination */
 .swiper-pagination-bullet {
   background: #bbb;
   opacity: 0.7;
@@ -138,10 +126,18 @@ a {
   opacity: 1;
 }
 
-/* Responsive Height for Slideshow */
+/* Responsive Height */
 @media (max-width: 768px) {
   .swiper {
     height: 50vh;
+  }
+
+  .map-preview {
+    width: 90%;
+  }
+
+  section {
+    padding: 1.5rem;
   }
 }
 
@@ -170,7 +166,7 @@ a {
   background-color: #d4af37;
 }
 
-/* Sections */
+/* Section Styles */
 section {
   padding: 2rem;
   text-align: center;
@@ -184,16 +180,5 @@ footer {
   padding: 1rem;
   font-size: 0.9rem;
   color: #aaa;
-}
-
-/* Responsive tweaks */
-@media (max-width: 768px) {
-  .map-preview {
-    width: 90%;
-  }
-
-  section {
-    padding: 1.5rem;
-  }
 }
 
