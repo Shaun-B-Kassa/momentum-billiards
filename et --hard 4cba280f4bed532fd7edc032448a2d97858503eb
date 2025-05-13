@@ -1,0 +1,150 @@
+[33mcommit 54df6390b9d31415d6e9976d8dd508ef2d9554a4[m[33m ([m[1;36mHEAD[m[33m -> [m[1;32mmain[m[33m, [m[1;31morigin/main[m[33m, [m[1;31morigin/HEAD[m[33m)[m
+Merge: 882b779 0fdcc34
+Author: Shaun Kassa <shaun.lulu.kassa@gmail.com>
+Date:   Tue May 13 14:11:25 2025 -0700
+
+    Merge branch 'main' of https://github.com/Shaun-B-Kassa/momentum-billiards
+
+[33mcommit 882b7794177e30667892fe5d6105e28a164b9455[m
+Author: Shaun Kassa <shaun.lulu.kassa@gmail.com>
+Date:   Tue May 13 14:10:55 2025 -0700
+
+    Updated index.html with latest changes
+
+[33mcommit 0fdcc34b88999c5792af72cef45b35b9ad4522b3[m
+Author: Shaun Kassa <shaun.lulu.kassa@gmail.com>
+Date:   Tue May 13 14:07:41 2025 -0700
+
+    Fixed slideshow visibility and fade transition
+
+[33mcommit 4cba280f4bed532fd7edc032448a2d97858503eb[m
+Author: Shaun Kassa <shaun.lulu.kassa@gmail.com>
+Date:   Tue May 13 14:02:11 2025 -0700
+
+    Improved mobile styling for navigation and slideshow
+
+[33mcommit 65b991e66ab6982ca27cebe3a3c13a102a010bae[m
+Author: Shaun Kassa <shaun.lulu.kassa@gmail.com>
+Date:   Tue May 13 13:54:56 2025 -0700
+
+    Improved mobile styling for navigation and slideshow
+
+[33mcommit f87da255567c0d3cadd143fc9d78b30145a5a0be[m
+Author: Shaun Kassa <shaun.lulu.kassa@gmail.com>
+Date:   Tue May 13 13:51:59 2025 -0700
+
+    Improved mobile styling for navigation and slideshow
+
+[33mcommit 5b6eedb6a130b73b1e1272d57d9802007b7ab948[m
+Author: Shaun Kassa <shaun.lulu.kassa@gmail.com>
+Date:   Tue May 13 13:47:43 2025 -0700
+
+    Improved mobile styling for navigation and slideshow
+
+[33mcommit 8caca9cebd22b719ddc5ba55a238e9304afb8224[m
+Author: Shaun Kassa <shaun.lulu.kassa@gmail.com>
+Date:   Tue May 13 13:41:13 2025 -0700
+
+    Improved mobile styling for navigation and slideshow
+
+[33mcommit f392add54fc944549fc5643da9d69d6622e916f1[m
+Author: Shaun Kassa <shaun.lulu.kassa@gmail.com>
+Date:   Tue May 13 13:35:32 2025 -0700
+
+    Improved mobile styling for navigation and slideshow
+
+[33mcommit 738d260a3cb1852631c26025cf2ed95881536b2c[m
+Author: Shaun Kassa <shaun.lulu.kassa@gmail.com>
+Date:   Tue May 13 13:32:41 2025 -0700
+
+    Improved mobile styling for slideshow and navigation
+
+[33mcommit 0f9cbd80b793cebd698a11752b283ca7d6f12ec6[m
+Author: Shaun Kassa <shaun.lulu.kassa@gmail.com>
+Date:   Tue May 13 13:25:36 2025 -0700
+
+    Fixed stylesheet link issue
+
+[33mcommit 29c1ce6fcba3ae8b7a3c3669942de1f2fe7bda4c[m
+Author: Shaun Kassa <shaun.lulu.kassa@gmail.com>
+Date:   Tue May 13 13:14:26 2025 -0700
+
+    Fixed stylesheet link issue
+
+[33mcommit 3bb633ed1dba17e2fb72d7df8f42c93ecaff18bb[m
+Author: Shaun Kassa <shaun.lulu.kassa@gmail.com>
+Date:   Tue May 13 13:11:14 2025 -0700
+
+    Fixed stylesheet link issue
+
+[33mcommit 0526ae9b635fc8b57f99054b0ae1f2ad1dcaa67b[m
+Author: Shaun Kassa <shaun.lulu.kassa@gmail.com>
+Date:   Tue May 13 13:09:29 2025 -0700
+
+    Fixed stylesheet link issue
+
+[33mcommit ff4af9dbe62451be093b46db6c2cb828c8984899[m
+Author: Shaun Kassa <shaun.lulu.kassa@gmail.com>
+Date:   Tue May 13 13:01:26 2025 -0700
+
+    Fixed stylesheet link issue
+
+[33mcommit 5cadc37cb6aa1a05aad84b749366488e0d8f3808[m
+Author: Shaun Kassa <shaun.lulu.kassa@gmail.com>
+Date:   Tue May 13 12:55:48 2025 -0700
+
+    Fixed stylesheet link issue
+
+[33mcommit baa78897702d91a9330ed9d9de0301aaf37a9c61[m
+Author: Shaun Kassa <shaun.lulu.kassa@gmail.com>
+Date:   Tue May 13 12:24:54 2025 -0700
+
+    Fixed stylesheet link issue
+
+[33mcommit 7a068222169ff3d404f1c994a98116810bb34777[m
+Author: Shaun Kassa <shaun.lulu.kassa@gmail.com>
+Date:   Tue May 13 12:21:48 2025 -0700
+
+    Updated index.html and styles.css with new design and slideshow
+
+[33mcommit f1718c5219544266cef1f43fdfe74d42371dafaf[m
+Author: Shaun Kassa <shaun.lulu.kassa@gmail.com>
+Date:   Tue May 13 12:10:00 2025 -0700
+
+    Added new images and updated project
+
+[33mcommit d6c9ea9530de304b3d3c9f897c32d307e90c2a3d[m
+Author: Shaun Kassa <shaun.lulu.kassa@gmail.com>
+Date:   Tue May 13 12:08:46 2025 -0700
+
+    Added new images and updated project
+
+[33mcommit 34d77d38b096efe868b620c8597a7238f7ef8f0f[m
+Author: Shaun Kassa <shaun.lulu.kassa@gmail.com>
+Date:   Tue May 13 12:00:08 2025 -0700
+
+    Updated index.html and styles.css with new design and slideshow
+
+[33mcommit ac4a6ba86ed04eb02e1e444b59ac04b769e60705[m
+Author: Shaun Kassa <shaun.lulu.kassa@gmail.com>
+Date:   Tue May 13 11:54:02 2025 -0700
+
+    Added new images and updated project
+
+[33mcommit 25fe3b7dcfc03395364104ecf2093c5e3809784c[m
+Author: Shaun Kassa <shaun.lulu.kassa@gmail.com>
+Date:   Tue May 13 11:28:03 2025 -0700
+
+    Updated styles with dark theme and hover effects
+
+[33mcommit bd48adb40044e54c1cd666afce1a3e7fedf8f3d0[m
+Author: Shaun Kassa <shaun.lulu.kassa@gmail.com>
+Date:   Tue May 13 11:21:54 2025 -0700
+
+    Fixed styling and layout
+
+[33mcommit 7320861c2cc30a21e654e5c0e772f227c98086d8[m
+Author: Shaun Kassa <shaun.lulu.kassa@gmail.com>
+Date:   Tue May 13 10:56:04 2025 -0700
+
+    Initial commit
