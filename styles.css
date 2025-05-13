@@ -44,24 +44,35 @@ a {
   gap: 20px;
 }
 
-/* === Swiper.js Slideshow === */
+/* === Swiper.js Slideshow (Centered & Smaller Images) === */
 .slideshow-wrapper {
   position: relative;
   overflow: hidden;
   width: 100%;
   max-height: 70vh;
   background-color: #000;
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }
 
 .swiper {
-  width: 100%;
-  height: 100%;
+  width: 60%; /* Make the slideshow smaller */
+  height: auto;
+  text-align: center;
+}
+
+.swiper-slide {
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }
 
 .swiper-slide img {
-  width: 100%;
+  width: 80%; /* Reduce image size */
   height: auto;
-  object-fit: cover;
+  object-fit: contain; /* Ensure images fit properly */
+  border-radius: 10px; /* Optional: Add rounded corners */
 }
 
 /* Swiper Navigation */
@@ -124,6 +135,14 @@ footer {
 
   .slideshow-wrapper {
     max-height: 50vh;
+  }
+
+  .swiper {
+    width: 80%; /* Adjust for mobile */
+  }
+
+  .swiper-slide img {
+    width: 90%; /* Slightly larger on mobile */
   }
 
   section {
