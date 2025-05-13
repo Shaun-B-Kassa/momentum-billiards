@@ -1,58 +1,55 @@
-@tailwind base;
-@tailwind components;
-@tailwind utilities;
 
-/* 🌑 Dark Theme */
-.bg-dark {
-    background-color: #0a0a0a;
-}
-.text-offWhite {
+body {
+    margin: 0;
+    font-family: 'Arial', sans-serif;
+    background-color: #111;
     color: #f4f4f4;
 }
 
-/* 🔴 Banner Styling */
-.bg-red-700 {
-    background-color: #b22222;
-}
-.text-yellow-400 {
-    color: #d4af37;
+header {
+    text-align: center;
+    padding: 2rem 1rem;
 }
 
-/* 🎱 Hero Section */
-.hero {
-    background: linear-gradient(rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0.6)), url('assets/images/pool-table.jpg');
-    background-size: cover;
-    background-position: center;
-}
-
-/* 🏠 Navigation Menu */
 nav a {
-    font-size: 1.2rem;
-    text-transform: uppercase;
-    font-weight: bold;
-    transition: color 0.3s ease-in-out;
-}
-nav a:hover {
-    color: #d4af37; /* Gold accent */
+    margin: 0 1rem;
+    color: #f4f4f4;
+    text-decoration: none;
 }
 
-/* 📸 Image Styling */
-img {
-    border-radius: 8px;
-    transition: transform 0.3s ease-in-out;
-}
-img:hover {
-    transform: scale(1.05);
+.hero {
+    text-align: center;
+    padding: 3rem 1rem;
+    background-color: #000;
 }
 
-/* 📱 Responsive Adjustments */
-@media (max-width: 768px) {
-    .hero h2 {
-        font-size: 2rem;
-    }
-    nav {
-        flex-direction: column;
-        text-align: center;
-    }
+section {
+    padding: 2rem 1rem;
+    max-width: 800px;
+    margin: auto;
+}
+
+h1, h2, h3 {
+    color: #c72c2c;
+}
+
+.gallery {
+    display: flex;
+    gap: 1rem;
+    flex-wrap: wrap;
+    justify-content: center;
+}
+
+.gallery img {
+    width: 300px;
+    height: auto;
+    border: 2px solid #444;
+}
+
+footer {
+    text-align: center;
+    padding: 1rem;
+    background-color: #000;
+    color: #aaa;
 }
 

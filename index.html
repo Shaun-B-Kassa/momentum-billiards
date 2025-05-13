@@ -4,53 +4,61 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Momentum Billiards</title>
-    <link href="styles.css" rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
 </head>
-<body class="bg-dark text-offWhite font-sans">
-
-    <!-- 🔴 Banner with Images -->
-    <header class="bg-red-700 p-6 text-center">
-        <div class="flex justify-center gap-4">
-            <img src="assets/images/dish1.jpg" class="w-20 h-20 rounded-lg">
-            <img src="assets/images/dish2.jpg" class="w-20 h-20 rounded-lg">
-            <img src="assets/images/dish3.jpg" class="w-20 h-20 rounded-lg">
-        </div>
-        <h1 class="text-white text-4xl font-bold mt-4">Momentum Billiards</h1>
-        <p class="text-yellow-400 text-lg">Oakland’s local pool house for serious players and casual nights out.</p>
+<body>
+    <header>
+        <h1>Momentum Billiards</h1>
+        <nav>
+            <a href="#hours">Hours</a>
+            <a href="#rates">Rates</a>
+            <a href="#location">Location</a>
+            <a href="#gallery">Gallery</a>
+            <a href="#contact">Contact</a>
+        </nav>
     </header>
 
-    <!-- 🏠 Navigation Menu -->
-    <nav class="bg-black text-white p-4 flex justify-center gap-6">
-        <a href="index.html" class="hover:text-yellow-400">Top Page</a>
-        <a href="menu.html" class="hover:text-yellow-400">Restaurant Menu</a>
-        <a href="about.html" class="hover:text-yellow-400">About Us</a>
-        <a href="contact.html" class="hover:text-yellow-400">Inquiry</a>
-        <a href="reserve.html" class="hover:text-yellow-400">Reserve a Table</a>
-        <a href="gallery.html" class="hover:text-yellow-400">Photo Gallery</a>
-        <a href="videos.html" class="hover:text-yellow-400">Video Gallery</a>
-    </nav>
+    <section class="hero">
+        <h2>Oakland's Local Pool Spot</h2>
+    </section>
 
-    <!-- 🎱 Hero Section (Pool Table Background) -->
-    <section class="h-screen flex items-center justify-center bg-cover bg-center" style="background-image: url('assets/images/pool-table.jpg');">
-        <div class="text-center text-white">
-            <h2 class="text-5xl font-serif">Play & Dine in Style</h2>
-            <p class="text-lg mt-2">Enjoy a game of billiards with great food and drinks.</p>
+    <section id="hours">
+        <h3>Hours</h3>
+        <p>Mon–Thu: 4pm – Midnight<br>
+           Fri–Sat: 4pm – 2am<br>
+           Sun: 2pm – 11pm</p>
+    </section>
+
+    <section id="rates">
+        <h3>Pool Rates</h3>
+        <p>$10/hour (Weekdays before 5PM)<br>
+           $15/hour (Evenings & Weekends)</p>
+    </section>
+
+    <section id="location">
+        <h3>Location</h3>
+        <p>3815 Telegraph Ave, Oakland, CA</p>
+        <iframe src="https://maps.google.com/maps?q=3815%20Telegraph%20Ave%2C%20Oakland%2C%20CA&t=&z=13&ie=UTF8&iwloc=&output=embed" width="100%" height="300" style="border:0;"></iframe>
+    </section>
+
+    <section id="gallery">
+        <h3>Gallery</h3>
+        <div class="gallery">
+            <img src="images/photo1.jpg" alt="Pool Table - Lounge Area">
+            <img src="images/photo2.jpg" alt="Players in Action">
+            <img src="images/photo3.jpg" alt="Night Scene at Momentum">
         </div>
     </section>
 
-    <!-- 💰 Table Rates -->
-    <section class="text-center p-8">
-        <h2 class="text-3xl font-serif">Table Rates</h2>
-        <p class="text-lg mt-2">$10/hr Weekdays | $15/hr Weekends</p>
+    <section id="contact">
+        <h3>Contact</h3>
+        <p>Email: info@momentumbilliards.com<br>
+           Phone: (555) 123-4567</p>
     </section>
 
-    <!-- 📍 Contact -->
-    <section class="text-center p-8">
-        <h2 class="text-3xl font-serif">Contact Us</h2>
-        <p>123 Oakland Ave, CA</p>
-        <p>Email: contact@momentumbilliards.com</p>
-    </section>
-
+    <footer>
+        <p>&copy; 2025 Momentum Billiards</p>
+    </footer>
 </body>
 </html>
 
