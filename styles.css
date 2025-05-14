@@ -268,7 +268,6 @@ footer {
   background-color: #d4af37;
 }
 
-
 /* === Reviews Section === */
 #reviews {
   padding: 2rem;
@@ -292,13 +291,6 @@ footer {
   margin: 1rem;
   width: 300px;
   text-align: center;
-}
-
-.review-photo {
-  width: 80px;
-  height: 80px;
-  border-radius: 50%;
-  margin-bottom: 10px;
 }
 
 .review-card p {
