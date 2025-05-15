@@ -19,11 +19,12 @@ body {
   top: 0;
   width: 100%;
   z-index: 1000;
-  background: rgba(0, 0, 0, 0.8);
-  backdrop-filter: blur(6px);
+  background: #000; /* Changed from rgba(0, 0, 0, 0.8) */
+  /* Removed backdrop-filter */
   padding: 1rem 2rem;
   border-bottom: 1px solid rgba(255, 255, 255, 0.1);
 }
+
 
 .header-inner {
   max-width: 100%;
