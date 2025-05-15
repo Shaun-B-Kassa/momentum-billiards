@@ -16,37 +16,36 @@ body {
   top: 0;
   width: 100%;
   z-index: 1000;
-  background: #0d0d14; /* match logo background */
+  background-color: rgba(0, 0, 0, 0.8); /* semi-transparent to match new logo */
+  backdrop-filter: blur(6px);
   padding: 1rem 2rem;
   border-bottom: 1px solid rgba(255, 255, 255, 0.1);
 }
 
 .header-inner {
-  max-width: 100%;
   display: flex;
-  justify-content: space-between;
+  justify-content: center;
   align-items: center;
-}
-
-.logo {
-  height: 60px; /* adjust as needed */
-  display: block;
+  position: relative;
 }
 
 .logo-link {
+  position: absolute;
+  left: 50%;
+  transform: translateX(-50%);
   display: flex;
   align-items: center;
   text-decoration: none;
 }
 
 .site-logo {
-  height: 60px;
+  height: 80px;
   width: auto;
   display: block;
 }
 
-/* === Menu Toggle === */
 .menu-toggle {
+  margin-left: auto;
   font-size: 2rem;
   background: none;
   border: none;
@@ -392,6 +391,15 @@ footer {
 
   .instagram-feed iframe {
     height: 400px;
+  }
+
+  /* Responsive header logo size & menu toggle */
+  .site-logo {
+    height: 60px;
+  }
+
+  .menu-toggle {
+    font-size: 1.8rem;
   }
 }
 
