@@ -204,6 +204,48 @@
     lightbox.style.display = 'none';
     lightboxImg.src = '';
   }
+
+  document.addEventListener("DOMContentLoaded", function () {
+  // Initialize Swiper
+  new Swiper(".mySwiper", {
+    loop: true,
+    autoplay: {
+      delay: 5000,
+      disableOnInteraction: false,
+    },
+    effect: "fade",
+    fadeEffect: { crossFade: true },
+    pagination: { el: ".swiper-pagination", clickable: true },
+    navigation: { nextEl: ".swiper-button-next", prevEl: ".swiper-button-prev" },
+    lazy: true,
+  });
+
+  // Smooth scroll for navigation links
+  document.querySelectorAll("a[href^='#']").forEach(anchor => {
+    anchor.addEventListener("click", function (e) {
+      e.preventDefault();
+      document.querySelector(this.getAttribute("href")).scrollIntoView({
+        behavior: "smooth"
+      });
+    });
+  });
+
+  // ✅ Fix Hamburger Menu Toggle
+  const toggleButton = document.querySelector(".menu-toggle");
+  const menu = document.getElementById("nav-links");
+
+  toggleButton.addEventListener("click", () => {
+    menu.classList.toggle("open");
+  });
+
+  // ✅ Close menu when clicking a link
+  document.querySelectorAll("#nav-links a").forEach(link => {
+    link.addEventListener("click", () => {
+      menu.classList.remove("open");
+    });
+  });
+});
+
 </script>
 
 </body>
