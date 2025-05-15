@@ -5,11 +5,10 @@ body {
   font-family: 'Segoe UI', sans-serif;
   background-color: #111;
   color: #f4f4f4;
-  overflow-x: hidden; /* Prevent horizontal scrolling */
+  overflow-x: hidden;
   width: 100%;
 }
 
-/* Ensure all elements fit within the viewport */
 * {
   box-sizing: border-box;
 }
@@ -33,7 +32,6 @@ body {
   align-items: center;
 }
 
-/* Logo (Left-Aligned) */
 .logo {
   font-size: 1.8rem;
   font-weight: bold;
@@ -44,7 +42,19 @@ body {
   text-align: left;
 }
 
-/* Hamburger Menu (Right-Aligned) */
+.logo-link {
+  display: flex;
+  align-items: center;
+  text-decoration: none;
+}
+
+.site-logo {
+  height: 60px;
+  width: auto;
+  display: block;
+}
+
+/* === Menu Toggle === */
 .menu-toggle {
   font-size: 2rem;
   background: none;
@@ -54,7 +64,6 @@ body {
   text-align: right;
 }
 
-/* Navigation Links (Hidden Until Clicked) */
 .nav-links {
   display: none;
   flex-direction: column;
@@ -88,19 +97,37 @@ body {
   color: #d4af37;
 }
 
-/* === Swiper.js Slideshow (No Padding, Fully Connected to Header & Hours) === */
+/* === Hero Section === */
+.hero {
+  text-align: center;
+  padding: 4rem 2rem;
+  background-color: #000;
+}
+
+.hero h1 {
+  font-size: 2.5rem;
+  color: #d4af37;
+  margin-bottom: 0.5rem;
+}
+
+.hero p {
+  font-size: 1.2rem;
+  color: #ccc;
+}
+
+/* === Slideshow === */
 .slideshow-wrapper {
   position: relative;
   width: 100%;
   overflow: hidden;
   background-color: #000;
-  margin: 0; /* Remove any margin */
-  padding: 0; /* Remove any padding */
+  margin: 0;
+  padding: 0;
 }
 
 .swiper {
   width: 100%;
-  height: 60vh; /* Reduced height */
+  height: 60vh;
 }
 
 .swiper-slide img {
@@ -108,11 +135,15 @@ body {
   height: 100%;
   object-fit: cover;
   display: block;
-  margin: 0; /* Ensure no spacing */
-  padding: 0; /* Ensure no spacing */
 }
 
-/* === Section Headers (Larger) === */
+/* === Section General === */
+section {
+  padding: 2rem;
+  text-align: center;
+  border-bottom: 1px solid #333;
+}
+
 section h2 {
   font-size: 2rem;
   font-weight: bold;
@@ -121,7 +152,87 @@ section h2 {
   margin-bottom: 1rem;
 }
 
-/* === Map Styles (Fix Overflow on Mobile) === */
+/* === Menu Section === */
+.menu-items {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 2rem;
+  margin-top: 2rem;
+}
+
+.menu-card {
+  background-color: rgba(255, 255, 255, 0.05);
+  border: 1px solid #333;
+  border-radius: 10px;
+  padding: 1.5rem;
+  width: 250px;
+  transition: transform 0.3s ease;
+}
+
+.menu-card:hover {
+  transform: scale(1.05);
+}
+
+.menu-card h3 {
+  color: #fff;
+  margin-bottom: 0.5rem;
+}
+
+.menu-card p {
+  color: #ccc;
+}
+
+/* === Reservation Button === */
+.reserve-button {
+  display: inline-block;
+  margin-top: 1.5rem;
+  padding: 12px 24px;
+  background-color: #b22222;
+  color: #fff;
+  text-decoration: none;
+  font-weight: bold;
+  border-radius: 5px;
+  font-size: 1rem;
+  transition: background-color 0.3s ease-in-out;
+}
+
+.reserve-button:hover {
+  background-color: #d4af37;
+}
+
+/* === Gallery === */
+.gallery {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 1rem;
+}
+
+.gallery img {
+  max-width: 300px;
+  border-radius: 8px;
+}
+
+.caption {
+  font-size: 1rem;
+  color: #fff;
+  margin-top: 5px;
+  text-align: center;
+}
+
+/* === Instagram Embed === */
+.instagram-feed iframe {
+  border: none;
+  width: 100%;
+  max-width: 400px;
+  height: 500px;
+  margin: 20px auto;
+  display: block;
+  border-radius: 12px;
+}
+
+/* === Map Section === */
 .map-preview {
   width: 100%;
   max-width: 600px;
@@ -135,7 +246,6 @@ section h2 {
   text-align: center;
 }
 
-/* Improved "View on Google Maps" Button */
 .map-link {
   display: inline-block;
   margin-top: 10px;
@@ -154,15 +264,6 @@ section h2 {
   background-color: #d4af37;
 }
 
-/* === Section Styles === */
-section {
-  padding: 2rem;
-  text-align: center;
-  border-bottom: 1px solid #333;
-  width: 100%;
-  margin: 0; /* Ensure sections are fully connected */
-}
-
 /* === Footer === */
 footer {
   background-color: #000;
@@ -170,66 +271,6 @@ footer {
   padding: 1rem;
   font-size: 0.9rem;
   color: #aaa;
-  width: 100%;
-}
-
-/* === Responsive Adjustments === */
-@media (max-width: 768px) {
-  .swiper {
-    height: 40vh; /* Further reduced for mobile */
-  }
-
-  section h2 {
-    font-size: 1.8rem;
-  }
-
-  .map-preview {
-    width: 90%;
-  }
-
-  .map-link {
-    font-size: 1rem;
-    padding: 10px 14px;
-  }
-
-  section {
-    padding: 1.5rem;
-  }
-}
-
-/* === Gallery Captions === */
-.caption {
-  text-align: center;
-  font-size: 1rem;
-  color: #fff;
-  margin-top: 5px;
-}
-
-/* === Lightbox for Enlarged Images === */
-.lightbox {
-  display: none;
-  position: fixed;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 100%;
-  background: rgba(0, 0, 0, 0.8);
-  justify-content: center;
-  align-items: center;
-}
-
-.lightbox img {
-  max-width: 90%;
-  max-height: 90%;
-}
-
-.close {
-  position: absolute;
-  top: 20px;
-  right: 30px;
-  font-size: 2rem;
-  color: #fff;
-  cursor: pointer;
 }
 
 /* === Contact Form === */
@@ -268,7 +309,7 @@ footer {
   background-color: #d4af37;
 }
 
-/* === Reviews Section === */
+/* === Reviews === */
 #reviews {
   padding: 2rem;
   text-align: center;
@@ -303,27 +344,63 @@ footer {
   color: #d4af37;
 }
 
-/* Responsive Adjustments */
+/* === Lightbox (Optional if needed for gallery) === */
+.lightbox {
+  display: none;
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0, 0, 0, 0.8);
+  justify-content: center;
+  align-items: center;
+}
+
+.lightbox img {
+  max-width: 90%;
+  max-height: 90%;
+}
+
+.close {
+  position: absolute;
+  top: 20px;
+  right: 30px;
+  font-size: 2rem;
+  color: #fff;
+  cursor: pointer;
+}
+
+/* === Responsive Styles === */
 @media (max-width: 768px) {
-  .reviews-container {
+  .swiper {
+    height: 40vh;
+  }
+
+  section h2 {
+    font-size: 1.8rem;
+  }
+
+  .map-preview {
+    width: 90%;
+  }
+
+  .map-link {
+    font-size: 1rem;
+    padding: 10px 14px;
+  }
+
+  section {
+    padding: 1.5rem;
+  }
+
+  .menu-items {
     flex-direction: column;
     align-items: center;
   }
 
-  .review-card {
-    width: 90%;
+  .instagram-feed iframe {
+    height: 400px;
   }
-}
-
-.site-logo {
-  height: 60px;
-  width: auto;
-  display: block;
-}
-
-.logo-link {
-  display: flex;
-  align-items: center;
-  text-decoration: none;
 }
 

@@ -5,13 +5,13 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
   <title>Momentum Billiards - Pool Hall & Lounge</title>
   <meta name="description" content="Momentum Billiards offers an exciting experience with professional-grade pool tables, a relaxing lounge, and thrilling matches.">
-  
+
   <!-- Open Graph Meta Tags for Social Sharing -->
   <meta property="og:title" content="Momentum Billiards - Pool Hall & Lounge" />
   <meta property="og:image" content="/images/preview.jpg" />
   <meta property="og:description" content="Experience exciting pool matches and relaxing lounges at Momentum Billiards." />
   <meta property="og:url" content="https://momentumbilliards.com" />
-  
+
   <link rel="stylesheet" href="styles.css" />
   <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@10/swiper-bundle.min.css"/>
 </head>
@@ -64,7 +64,7 @@
 <!-- Lightbox for Enlarged Images -->
 <div id="lightbox" class="lightbox">
   <span class="close" onclick="closeLightbox()">&times;</span>
-  <img id="lightbox-img" src="" alt="Enlarged Image">
+  <img id="lightbox-img" src="" alt="Enlarged View">
 </div>
 
 <section id="hours">
@@ -77,32 +77,26 @@
   <p>$10/hour (Weekdays before 5PM)<br>$15/hour (Evenings & Weekends)</p>
 </section>
 
-
-
 <!-- Reviews Section -->
 <section id="reviews">
   <h2>What Our Players Say</h2>
   <div class="reviews-container">
     <div class="review-card">
-      <p>"I recently visited Momentum Billiards in Oakland, and it was an awesome experience. The place is spotlessly clean, the tables and equipment are brand new, and the owner was incredibly friendly and welcoming. The atmosphere is perfect for both casual players and serious enthusiasts, with well-spaced tables and ideal lighting. The prices are very reasonable for the quality offered, and the fact that they’re open late is a huge bonus. Honestly, a spot like this was much needed in Oakland and I’ll definitely be coming back soon!"</p>
+      <p>"I recently visited Momentum Billiards in Oakland, and it was an awesome experience. The place is spotlessly clean, the tables and equipment are brand new, and the owner was incredibly friendly and welcoming..."</p>
       <strong>— Tinsaye Anulo</strong>
     </div>
-
     <div class="review-card">
-      <p>"I went with some friends to Momentum Billiards and I loved the place. It is clean, nice, the tables are brand new, they have billiard gloves, and the place is really amazing. The owner is a very friendly person and the atmosphere is great to play and have fun. I recommend the place 100%."</p>
+      <p>"I went with some friends to Momentum Billiards and I loved the place. It is clean, nice, the tables are brand new..."</p>
       <strong>— Elias Calel</strong>
     </div>
-
     <div class="review-card">
       <p>"An excellent billiard hall, a great location, and wonderful music! Everyone should come here!"</p>
       <strong>— Mykola Iakymakha</strong>
     </div>
-
     <div class="review-card">
-      <p>"Clean place with a great atmosphere. The staff is friendly and welcoming. Good music, the overall vibe is fun. Definitely worth a visit!"</p>
+      <p>"Clean place with a great atmosphere. The staff is friendly and welcoming. Good music, the overall vibe is fun."</p>
       <strong>— Mary</strong>
     </div>
-
     <div class="review-card">
       <p>"One of the best spots to hang out and shoot some pool in Oakland!"</p>
       <strong>— Shaun Kassa</strong>
@@ -110,11 +104,9 @@
   </div>
 </section>
 
-
 <section id="location">
   <h2>Location</h2>
   <p>3815 Telegraph Ave, Oakland, CA 94609</p>
-
   <div class="map-container">
     <iframe
       class="map-preview"
@@ -126,7 +118,6 @@
       loading="lazy"
       referrerpolicy="no-referrer-when-downgrade">
     </iframe>
-
     <p>
       <a href="https://www.google.com/maps/place/3815+Telegraph+Ave,+Oakland,+CA+94609"
          target="_blank" class="map-link">
@@ -167,8 +158,8 @@
   <p>&copy; 2025 Momentum Billiards</p>
   <p>Hours: Mon–Thu: 4 PM – 12 AM | Fri: 4 PM – 1 AM | Sat: 2 PM – 1 AM | Sun: 2 PM – 12 AM</p>
   <div class="footer-links">
-    <a href="#">Privacy Policy</a> | 
-    <a href="#">Terms of Service</a> | 
+    <a href="#">Privacy Policy</a> |
+    <a href="#">Terms of Service</a> |
     <a href="#">FAQ</a>
   </div>
 </footer>
@@ -176,6 +167,7 @@
 <script src="https://cdn.jsdelivr.net/npm/swiper@10/swiper-bundle.min.js"></script>
 <script>
   document.addEventListener("DOMContentLoaded", function () {
+    // Initialize Swiper
     new Swiper(".mySwiper", {
       loop: true,
       autoplay: {
@@ -186,10 +178,10 @@
       fadeEffect: { crossFade: true },
       pagination: { el: ".swiper-pagination", clickable: true },
       navigation: { nextEl: ".swiper-button-next", prevEl: ".swiper-button-prev" },
-      lazy: true, // Lazy loading for images
+      lazy: true,
     });
 
-    // Smooth scrolling for navigation links
+    // Smooth scroll for in-page links
     document.querySelectorAll("a[href^='#']").forEach(anchor => {
       anchor.addEventListener("click", function (e) {
         e.preventDefault();
@@ -199,6 +191,21 @@
       });
     });
   });
+
+  // Lightbox functions
+  function openLightbox(imageSrc) {
+    const lightbox = document.getElementById('lightbox');
+    const lightboxImg = document.getElementById('lightbox-img');
+    lightboxImg.src = imageSrc;
+    lightbox.style.display = 'flex';
+  }
+
+  function closeLightbox() {
+    const lightbox = document.getElementById('lightbox');
+    const lightboxImg = document.getElementById('lightbox-img');
+    lightbox.style.display = 'none';
+    lightboxImg.src = '';
+  }
 </script>
 
 </body>
