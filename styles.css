@@ -18,7 +18,7 @@ body {
   z-index: 1000;
   background-color: rgba(0, 0, 0, 0.8); /* semi-transparent to match new logo */
   backdrop-filter: blur(6px);
-  padding: 1rem 2rem;
+  padding: 1.5rem 2rem;
   border-bottom: 1px solid rgba(255, 255, 255, 0.1);
 }
 
@@ -39,7 +39,7 @@ body {
 }
 
 .site-logo {
-  height: 80px;
+  height: 130px;
   width: auto;
   display: block;
 }
@@ -395,7 +395,7 @@ footer {
 
   /* Responsive header logo size & menu toggle */
   .site-logo {
-    height: 60px;
+    height: 90px;
   }
 
   .menu-toggle {
