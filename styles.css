@@ -315,3 +315,15 @@ footer {
   }
 }
 
+.site-logo {
+  height: 60px;
+  width: auto;
+  display: block;
+}
+
+.logo-link {
+  display: flex;
+  align-items: center;
+  text-decoration: none;
+}
+
