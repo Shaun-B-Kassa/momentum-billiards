@@ -43,8 +43,12 @@ h2 {
 }
 
 .site-logo {
-  height: 50px;
+  height: 120px; /* adjust as needed */
+  width: auto;
+  opacity: 0.9; /* slightly transparent for blending effect */
+  filter: drop-shadow(0 0 4px rgba(0,0,0,0.5)); /* optional: helps it stand out */
 }
+
 
 .menu-toggle {
   background: none;
