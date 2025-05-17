@@ -40,13 +40,21 @@ h2 {
   justify-content: space-between;
   max-width: 1100px;
   margin: 0 auto;
+  padding-top: 1rem;
+  padding-bottom: 1rem;
 }
 
 .site-logo {
-  height: 120px; /* adjust as needed */
+  height: 180px; /* Increased from 120px */
   width: auto;
-  opacity: 0.9; /* slightly transparent for blending effect */
-  filter: drop-shadow(0 0 4px rgba(0,0,0,0.5)); /* optional: helps it stand out */
+  max-width: 100%;
+  opacity: 1; /* Fully visible */
+  filter: drop-shadow(0 0 6px rgba(0,0,0,0.6));
+  transition: transform 0.3s ease-in-out;
+}
+
+.site-logo:hover {
+  transform: scale(1.02); /* Optional subtle hover effect */
 }
 
 
