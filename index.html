@@ -40,19 +40,8 @@
 <!-- Gallery Section -->
 <section id="slideshow" class="slideshow-wrapper">
   <div class="swiper mySwiper fullwidth-slider">
-    <div class="swiper-wrapper">
-      <div class="swiper-slide">
-        <img src="/images/photo1.jpg" alt="Exciting pool matches" loading="lazy" onclick="openLightbox('/images/photo1.jpg')">
-        <div class="caption-overlay">Exciting pool matches at Momentum Billiards</div>
-      </div>
-      <div class="swiper-slide">
-        <img src="/images/photo2.jpg" alt="Lounge area" loading="lazy" onclick="openLightbox('/images/photo2.jpg')">
-        <div class="caption-overlay">Relaxing lounge area for players</div>
-      </div>
-      <div class="swiper-slide">
-        <img src="/images/photo3.jpg" alt="Pool tables" loading="lazy" onclick="openLightbox('/images/photo3.jpg')">
-        <div class="caption-overlay">Professional-grade pool tables</div>
-      </div>
+    <div class="swiper-wrapper" id="slide-container">
+      <!-- Slides will be dynamically inserted here -->
     </div>
     <div class="swiper-button-prev"></div>
     <div class="swiper-button-next"></div>
@@ -162,6 +151,29 @@
 <script src="https://cdn.jsdelivr.net/npm/swiper@10/swiper-bundle.min.js"></script>
 <script>
   document.addEventListener("DOMContentLoaded", function () {
+    // Dynamically insert slides for photo1.jpg to photo15.jpg
+    const slideContainer = document.getElementById("slide-container");
+
+    for (let i = 1; i <= 15; i++) {
+      const slide = document.createElement("div");
+      slide.className = "swiper-slide";
+
+      const img = document.createElement("img");
+      img.src = `/images/photo${i}.jpg`;
+      img.alt = `Momentum Billiards photo ${i}`;
+      img.loading = "lazy";
+      img.onclick = () => openLightbox(`/images/photo${i}.jpg`);
+
+      const caption = document.createElement("div");
+      caption.className = "caption-overlay";
+      caption.textContent = `Photo ${i} at Momentum Billiards`;
+
+      slide.appendChild(img);
+      slide.appendChild(caption);
+      slideContainer.appendChild(slide);
+    }
+
+    // Initialize Swiper
     new Swiper(".mySwiper", {
       loop: true,
       autoplay: {
