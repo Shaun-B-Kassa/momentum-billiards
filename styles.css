@@ -14,11 +14,13 @@ body, html {
 
 /* Header */
 .site-header {
-  background: #000;
+  background: rgba(0, 0, 0, 0.9);
   position: sticky;
   top: 0;
-  z-index: 100;
+  z-index: 1000;
   padding: 1rem 2rem;
+  box-shadow: 0 2px 10px rgba(0, 188, 212, 0.1);
+  border-bottom: 1px solid rgba(255, 255, 255, 0.05);
 }
 
 .header-inner {
@@ -27,10 +29,11 @@ body, html {
   display: flex;
   justify-content: space-between;
   align-items: center;
+  position: relative;
 }
 
 .site-logo {
-  height: 100px;
+  height: 80px;
   transition: transform 0.3s ease;
 }
 
@@ -38,47 +41,79 @@ body, html {
   transform: scale(1.05);
 }
 
-.menu-toggle {
-  background: none;
-  border: none;
-  font-size: 2rem;
-  color: #0ff;
-  display: none;
-  cursor: pointer;
-}
-
+/* Modern Nav */
 .nav-links {
   display: flex;
-  gap: 1.5rem;
+  gap: 2rem;
+  align-items: center;
 }
 
 .nav-links a {
   color: #eee;
-  font-weight: bold;
-  padding: 0.5rem;
-  transition: color 0.3s;
+  text-transform: uppercase;
+  font-weight: 600;
+  font-size: 0.95rem;
+  position: relative;
+  padding-bottom: 0.25rem;
+  transition: color 0.3s ease;
+}
+
+.nav-links a::after {
+  content: "";
+  position: absolute;
+  width: 0%;
+  height: 2px;
+  background: #00bcd4;
+  left: 0;
+  bottom: 0;
+  transition: width 0.3s ease;
+}
+
+.nav-links a:hover::after {
+  width: 100%;
 }
 
 .nav-links a:hover {
   color: #00bcd4;
 }
 
+.menu-toggle {
+  background: none;
+  border: none;
+  font-size: 2rem;
+  color: #00bcd4;
+  display: none;
+  cursor: pointer;
+}
+
 @media (max-width: 768px) {
   .menu-toggle {
     display: block;
+    position: absolute;
+    right: 0;
+    top: 50%;
+    transform: translateY(-50%);
   }
+
   .nav-links {
     display: none;
     flex-direction: column;
-    background: #000;
+    background: #111;
     position: absolute;
     right: 1rem;
-    top: 100px;
+    top: 90px;
     width: 200px;
     padding: 1rem;
+    border-radius: 12px;
+    box-shadow: 0 4px 20px rgba(0,0,0,0.6);
   }
+
   .nav-links.open {
     display: flex;
+  }
+
+  .nav-links a {
+    padding: 0.75rem 0;
   }
 }
 
@@ -94,17 +129,9 @@ body, html {
   object-fit: cover;
 }
 
-.caption-overlay {
-  position: absolute;
-  bottom: 30px;
-  left: 30px;
-  background: rgba(0, 0, 0, 0.5);
-  padding: 1rem 1.5rem;
-  color: #fff;
-  font-size: 1rem;
-  border-radius: 10px;
-}
+/* Removed caption-overlay styling */
 
+/* Swiper controls */
 .swiper-button-next,
 .swiper-button-prev,
 .swiper-pagination-bullet-active {
@@ -162,7 +189,6 @@ h2 {
   color: #ddd;
 }
 
-/* Larger Font for Hours & Rates */
 .glass-card p {
   font-size: 1.25rem;
   line-height: 1.8;
@@ -172,18 +198,6 @@ h2 {
   .glass-card p {
     font-size: 1.4rem;
   }
-
-  .header-inner {
-  position: relative;
-}
-
-.menu-toggle {
-  position: absolute;
-  right: 0;
-  top: 50%;
-  transform: translateY(-50%);
-}
-
 }
 
 /* Reviews */
@@ -252,6 +266,21 @@ h2 {
   border: none;
 }
 
+.map-button {
+  display: inline-block;
+  padding: 0.75rem 1.5rem;
+  background-color: #e53935;
+  color: white;
+  border-radius: 8px;
+  font-weight: bold;
+  text-decoration: none;
+  transition: background-color 0.3s ease;
+}
+
+.map-button:hover {
+  background-color: #c62828;
+}
+
 /* Social Icons */
 .social-icons {
   display: flex;
@@ -284,20 +313,5 @@ footer {
 .footer-links a {
   color: #00bcd4;
   margin: 0 0.5rem;
-}
-
-.map-button {
-  display: inline-block;
-  padding: 0.75rem 1.5rem;
-  background-color: #e53935; /* red */
-  color: white;
-  border-radius: 8px;
-  font-weight: bold;
-  text-decoration: none;
-  transition: background-color 0.3s ease;
-}
-
-.map-button:hover {
-  background-color: #c62828;
 }
 
