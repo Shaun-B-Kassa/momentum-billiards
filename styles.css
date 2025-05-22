@@ -152,6 +152,28 @@ h2 {
   color: #00bcd4;
 }
 
+/* Glass Card */
+.glass-card {
+  background: rgba(255,255,255,0.05);
+  backdrop-filter: blur(8px);
+  border-radius: 12px;
+  padding: 2rem;
+  margin-top: 1rem;
+  color: #ddd;
+}
+
+/* Larger Font for Hours & Rates */
+.glass-card p {
+  font-size: 1.25rem;
+  line-height: 1.8;
+}
+
+@media (min-width: 768px) {
+  .glass-card p {
+    font-size: 1.4rem;
+  }
+}
+
 /* Reviews */
 .reviews-container {
   display: grid;
@@ -207,16 +229,6 @@ h2 {
 
 .contact-form button:hover {
   background: #00acc1;
-}
-
-/* Glass Card */
-.glass-card {
-  background: rgba(255,255,255,0.05);
-  backdrop-filter: blur(8px);
-  border-radius: 12px;
-  padding: 2rem;
-  margin-top: 1rem;
-  color: #ddd;
 }
 
 /* Map */
