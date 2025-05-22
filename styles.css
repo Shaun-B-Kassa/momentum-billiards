@@ -172,6 +172,18 @@ h2 {
   .glass-card p {
     font-size: 1.4rem;
   }
+
+  .header-inner {
+  position: relative;
+}
+
+.menu-toggle {
+  position: absolute;
+  right: 0;
+  top: 50%;
+  transform: translateY(-50%);
+}
+
 }
 
 /* Reviews */
