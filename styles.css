@@ -529,3 +529,15 @@ body {
   animation: rotateBackground1 20s linear infinite;
 }
 
+.address-highlight {
+  font-size: 1.5rem;
+  font-weight: bold;
+  color: #f9a825;
+  background: rgba(255, 255, 255, 0.1);
+  display: inline-block;
+  padding: 0.5rem 1rem;
+  border-radius: 8px;
+  margin-bottom: 1rem;
+  box-shadow: 0 2px 8px rgba(0, 188, 212, 0.2);
+}
+
