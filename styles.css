@@ -142,13 +142,27 @@ body, html {
     height: 60vh; /* Smaller height on mobile */
     max-height: 400px;
   }
+
+    .fullwidth-slider {
+    height: 60vh;
+    max-height: 400px;
+  }
+
+    .slideshow-wrapper {
+    height: 60vh;
+    max-height: 400px;
+  }
 }
 
 /* Slideshow */
 .slideshow-wrapper {
-  padding: 0;
-  margin: 0;
+  height: 80vh; /* Match the new image height */
+  max-height: 600px; /* Prevent excessive empty space */
+  display: flex;
+  align-items: center;
+  justify-content: center;
 }
+
 #slideshow {
   padding: 0;
   margin-top: 0;
@@ -157,8 +171,8 @@ body, html {
   z-index: 1;
 }
 .fullwidth-slider {
-  height: 100vh;
-  width: 100%;
+  height: 80vh; /* Keeps wrapper aligned with the new image size */
+  max-height: 600px; /* Prevents excessive empty space */
   background-attachment: fixed;
   background-size: cover;
 }
