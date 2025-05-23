@@ -148,10 +148,9 @@
     for (let i = 1; i <= 9; i++) {
       const slide = document.createElement("div");
       slide.className = "swiper-slide";
-      slide.innerHTML = `
-        <img src="images/photo${i}.jpg" alt="Pool photo ${i}" onclick="openLightbox('images/photo${i}.jpg')" />
-        <div class="caption-overlay">Photo ${i} at Momentum</div>
-      `;
+	    slide.innerHTML = `
+  <img src="images/photo${i}.jpg" alt="Pool photo ${i}" onclick="openLightbox('images/photo${i}.jpg')" />
+`;
       slideContainer.appendChild(slide);
     }
 
