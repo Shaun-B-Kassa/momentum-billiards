@@ -92,11 +92,10 @@ body, html {
   gap: 2rem;
   align-items: center;
 }
-
 .nav-links a {
   font-size: 1.1rem;
   text-decoration: none;
-  font-family: 'Roboto', sans-serif;
+  font-family: 'Party LET', sans-serif; /* Updated to Party LET */
   font-weight: 500;
   letter-spacing: 0.5px;
   text-transform: uppercase;
@@ -105,6 +104,7 @@ body, html {
   padding-bottom: 0.25rem;
   transition: color 0.3s ease;
 }
+
 
 .nav-links a:hover {
   background: linear-gradient(to right, #00bcd4, #1de9b6);
