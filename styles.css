@@ -7,9 +7,29 @@
 
 body, html {
   font-family: 'Space Grotesk', sans-serif;
-  background: #0a0a0a;
+  background: linear-gradient(135deg, #0d1f2d, #1b2a49, #3c3b6e, #1b2a49, #0d1f2d);
+  background-size: 400% 400%;
+  animation: bgShift 30s ease infinite;
   color: #eee;
   scroll-behavior: smooth;
+  position: relative;
+  overflow-x: hidden;
+}
+
+@keyframes bgShift {
+  0% { background-position: 0% 50%; }
+  50% { background-position: 100% 50%; }
+  100% { background-position: 0% 50%; }
+}
+
+/* Optional Starfield Canvas */
+#stars-bg {
+  position: fixed;
+  top: 0; left: 0;
+  width: 100%;
+  height: 100%;
+  z-index: 0;
+  pointer-events: none;
 }
 
 /* Header */
@@ -32,12 +52,10 @@ body, html {
   position: relative;
 }
 
-
 .site-logo {
   height: 110px;
   transition: transform 0.3s ease;
 }
-
 
 .site-logo:hover {
   transform: scale(1.05);
@@ -60,7 +78,6 @@ body, html {
   align-items: center;
 }
 
-
 .nav-links a {
   font-size: 1.1rem;
   text-decoration: none;
@@ -74,13 +91,11 @@ body, html {
   transition: color 0.3s ease;
 }
 
-
 .nav-links a:hover {
   background: linear-gradient(to right, #00bcd4, #1de9b6);
   color: #000;
   box-shadow: 0 0 10px #00bcd4;
 }
-
 
 .menu-toggle {
   background: none;
@@ -102,7 +117,6 @@ body, html {
     top: 50%;
     transform: translateY(-50%);
   }
-
   .nav-links {
     display: none;
     flex-direction: column;
@@ -115,11 +129,9 @@ body, html {
     border-radius: 12px;
     box-shadow: 0 4px 20px rgba(0,0,0,0.6);
   }
-
   .nav-links.open {
     display: flex;
   }
-
   .nav-links a {
     padding: 0.75rem 0;
   }
@@ -130,7 +142,6 @@ body, html {
   padding: 0;
   margin: 0;
 }
-
 #slideshow {
   padding: 0;
   margin-top: 0;
@@ -138,30 +149,21 @@ body, html {
   position: relative;
   z-index: 1;
 }
-
-
 .fullwidth-slider {
   height: 100vh;
   width: 100%;
   background-attachment: fixed;
   background-size: cover;
 }
-
-
 .swiper-slide img {
   width: 100%;
   height: 100vh;
   object-fit: cover;
   transition: transform 3s ease;
 }
-
 .swiper-slide:hover img {
   transform: scale(1.05);
 }
-
-/* Removed caption-overlay styling */
-
-/* Swiper controls */
 .swiper-button-next,
 .swiper-button-prev,
 .swiper-pagination-bullet-active {
@@ -179,12 +181,10 @@ body, html {
   align-items: center;
   z-index: 2000;
 }
-
 .lightbox img {
   max-width: 90%;
   max-height: 90%;
 }
-
 .lightbox .close {
   position: absolute;
   top: 20px;
@@ -203,13 +203,14 @@ section {
   transform: translateY(30px);
   transition: opacity 1s ease-out, transform 1s ease-out;
   text-align: center;
+  border-top: 3px solid #00bcd4;
+  border-radius: 4px;
+  box-shadow: 0 -1px 10px rgba(0, 188, 212, 0.2);
 }
-
 section.visible {
   opacity: 1;
   transform: translateY(0);
 }
-
 h2 {
   font-family: 'Bebas Neue', cursive;
   font-size: 2rem;
@@ -220,24 +221,34 @@ h2 {
 /* Glass Card */
 .glass-card {
   background: rgba(255,255,255,0.05);
-  backdrop-filter: blur(8px);
+  backdrop-filter: blur(10px);
   border-radius: 12px;
   padding: 2rem;
   margin-top: 1rem;
   color: #ddd;
+  position: relative;
+  overflow: hidden;
+  z-index: 1;
   transition: transform 0.3s ease, box-shadow 0.3s ease;
 }
-
 .glass-card:hover {
   transform: translateY(-5px);
   box-shadow: 0 8px 20px rgba(0, 188, 212, 0.15);
 }
-
+.glass-card::before {
+  content: '';
+  position: absolute;
+  top: -50%;
+  left: -50%;
+  width: 200%;
+  height: 200%;
+  background: radial-gradient(circle at center, rgba(0, 188, 212, 0.08), transparent 70%);
+  z-index: -1;
+}
 .glass-card p {
   font-size: 1.25rem;
   line-height: 1.8;
 }
-
 @media (min-width: 768px) {
   .glass-card p {
     font-size: 1.4rem;
@@ -251,7 +262,6 @@ h2 {
   gap: 2rem;
   margin-top: 2rem;
 }
-
 .review-card {
   background: rgba(255, 255, 255, 0.05);
   border-left: 4px solid #00bcd4;
@@ -260,12 +270,10 @@ h2 {
   backdrop-filter: blur(6px);
   text-align: left;
 }
-
 .review-card:hover {
   transform: scale(1.05);
   box-shadow: 0 0 20px rgba(0,188,212,0.3);
 }
-
 
 /* Contact */
 .contact-form {
@@ -273,13 +281,11 @@ h2 {
   margin: auto;
   text-align: left;
 }
-
 .contact-form label {
   font-weight: bold;
   display: block;
   margin-top: 1rem;
 }
-
 .contact-form input,
 .contact-form textarea {
   width: 100%;
@@ -290,7 +296,6 @@ h2 {
   border-radius: 5px;
   color: #eee;
 }
-
 .contact-form button {
   background: #00bcd4;
   border: none;
@@ -302,7 +307,6 @@ h2 {
   cursor: pointer;
   transition: background 0.3s;
 }
-
 .contact-form button:hover {
   background: #00acc1;
 }
@@ -315,7 +319,6 @@ h2 {
   margin-top: 1rem;
   border: none;
 }
-
 .map-button {
   display: inline-block;
   padding: 0.75rem 1.5rem;
@@ -326,7 +329,6 @@ h2 {
   text-decoration: none;
   transition: background-color 0.3s ease;
 }
-
 .map-button:hover {
   background-color: #c62828;
 }
@@ -337,12 +339,10 @@ h2 {
   justify-content: center;
   gap: 2rem;
 }
-
 .social-icons img {
   width: 40px;
   transition: transform 0.3s;
 }
-
 .social-icons img:hover {
   transform: scale(1.2);
 }
@@ -355,16 +355,15 @@ footer {
   padding: 2rem 1rem;
   font-size: 0.9rem;
 }
-
 .footer-links {
   margin-top: 1rem;
 }
-
 .footer-links a {
   color: #00bcd4;
   margin: 0 0.5rem;
 }
 
+/* Caption Overlay */
 .caption-overlay {
   position: absolute;
   bottom: 2rem;
@@ -380,7 +379,6 @@ footer {
   transition: opacity 0.5s ease, transform 0.5s ease;
   pointer-events: none;
 }
-
 .swiper-slide:hover .caption-overlay {
   opacity: 1;
   transform: translateY(0);
