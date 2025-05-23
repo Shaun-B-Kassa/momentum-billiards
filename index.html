@@ -8,7 +8,7 @@
 
   <!-- Open Graph Meta Tags -->
   <meta property="og:title" content="Momentum Billiards - Pool Hall & Lounge" />
-  <meta property="og:image" content="/images/preview.jpg" />
+  <meta property="og:image" content="images/preview.jpg" />
   <meta property="og:description" content="Experience pool like never before at Momentum Billiards." />
   <meta property="og:url" content="https://momentumbilliards.com" />
 
@@ -22,7 +22,7 @@
 <header class="site-header">
   <div class="header-inner">
     <a href="/" class="logo-link" aria-label="Home">
-      <img src="/images/logo.png" alt="Momentum Billiards Logo" class="site-logo">
+      <img src="images/logo.png" alt="Momentum Billiards Logo" class="site-logo">
     </a>
     <button class="menu-toggle" aria-label="Toggle navigation">&#9776;</button>
     <nav class="nav">
@@ -53,6 +53,7 @@
   <span class="close" onclick="closeLightbox()">&times;</span>
   <img id="lightbox-img" src="" alt="Enlarged view">
 </div>
+
 <section id="hours-rates">
   <h2>Hours & Rates</h2>
   <div class="glass-card">
@@ -87,19 +88,13 @@
   <h2>Find Us</h2>
   <p>3815 Telegraph Ave, Oakland, CA 94609</p>
   <div class="map-container">
-    <!-- Updated Street View iframe -->
-    <iframe
-      class="map-preview"
+    <iframe class="map-preview"
       src="https://www.google.com/maps/embed?pb=!4v1747940987462!6m8!1m7!1s_VqSR-z4zwogURt5SXv_rg!2m2!1d37.82698004402323!2d-122.2650943578715!3f297.30386!4f0!5f0.7820865974627469"
-      width="100%"
-      height="300"
+      width="100%" height="300"
       style="border:0; border-radius: 12px;"
-      allowfullscreen=""
-      loading="lazy"
+      allowfullscreen="" loading="lazy"
       referrerpolicy="no-referrer-when-downgrade">
     </iframe>
-
-    <!-- Button styled link -->
     <p style="margin-top: 1rem;">
       <a class="map-button" href="https://www.google.com/maps/place/3815+Telegraph+Ave,+Oakland,+CA+94609" target="_blank">
         View on Google Maps
@@ -111,9 +106,9 @@
 <section id="social-media">
   <h2>Connect With Us</h2>
   <div class="social-icons">
-    <a href="https://www.facebook.com" target="_blank"><img src="/icons/facebook.svg" alt="Facebook"></a>
-    <a href="https://www.instagram.com" target="_blank"><img src="/icons/instagram.svg" alt="Instagram"></a>
-    <a href="https://www.twitter.com" target="_blank"><img src="/icons/twitter.svg" alt="Twitter"></a>
+    <a href="https://www.facebook.com" target="_blank"><img src="icons/facebook.svg" alt="Facebook"></a>
+    <a href="https://www.instagram.com" target="_blank"><img src="icons/instagram.svg" alt="Instagram"></a>
+    <a href="https://www.twitter.com" target="_blank"><img src="icons/twitter.svg" alt="Twitter"></a>
   </div>
 </section>
 
@@ -132,10 +127,10 @@
     for (let i = 1; i <= 9; i++) {
       const slide = document.createElement("div");
       slide.className = "swiper-slide";
-       slide.innerHTML = `
-  <img src="images/photo${i}.jpg" alt="Pool photo ${i}" onclick="openLightbox('images/photo${i}.jpg')" />
-  <div class="caption-overlay">Photo ${i} at Momentum</div>
-`;
+      slide.innerHTML = `
+        <img src="images/photo${i}.jpg" alt="Pool photo ${i}" onclick="openLightbox('images/photo${i}.jpg')" />
+        <div class="caption-overlay">Photo ${i} at Momentum</div>
+      `;
       slideContainer.appendChild(slide);
     }
 
@@ -160,14 +155,14 @@
         document.getElementById("nav-links").classList.remove("open")
       )
     );
-	    const sections = document.querySelectorAll("section");
-  const observer = new IntersectionObserver(entries => {
-    entries.forEach(entry => {
-      if (entry.isIntersecting) entry.target.classList.add("visible");
-    });
-  }, { threshold: 0.1 });
 
-  sections.forEach(section => observer.observe(section));
+    const sections = document.querySelectorAll("section");
+    const observer = new IntersectionObserver(entries => {
+      entries.forEach(entry => {
+        if (entry.isIntersecting) entry.target.classList.add("visible");
+      });
+    }, { threshold: 0.1 });
+    sections.forEach(section => observer.observe(section));
   });
 
   function openLightbox(src) {
