@@ -428,3 +428,25 @@ body {
   padding-top: 80px; /* Adjust this value based on header height */
 }
 
+
+#hours-rates {
+  padding: 4rem 1rem;
+  max-width: 1100px;
+  margin: auto;
+  text-align: center;
+  border-top: 3px solid #00bcd4;
+  border-radius: 4px;
+  box-shadow: 0 -1px 10px rgba(0, 188, 212, 0.2);
+}
+
+#hours-rates .glass-card {
+  display: inline-block;
+  width: 48%; /* Make both cards side by side */
+  vertical-align: top;
+}
+@media (max-width: 768px) {
+  #hours-rates .glass-card {
+    width: 100%; /* Stack cards in mobile view */
+  }
+}
+
