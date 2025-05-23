@@ -16,28 +16,6 @@
   <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@10/swiper-bundle.min.css"/>
   <link href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@400;600&family=Orbitron:wght@500&family=Roboto:wght@400;500;700&display=swap" rel="stylesheet">
   <link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&display=swap" rel="stylesheet">
-  <style>
-    .site-header {
-      background: linear-gradient(to right, #000, #111);
-      box-shadow: 0 4px 8px rgba(0, 0, 0, 0.4);
-    }
-
-    .nav-links a {
-      padding: 0.5rem 1rem;
-      border-radius: 6px;
-      background: rgba(0, 188, 212, 0.1);
-      transition: background 0.3s, color 0.3s;
-    }
-
-    .nav-links a:hover {
-      background: #00bcd4;
-      color: #000;
-    }
-
-    .swiper-slide .caption-overlay {
-      display: none;
-    }
-  </style>
 </head>
 <body>
 
@@ -200,6 +178,14 @@
         document.getElementById("nav-links").classList.remove("open")
       )
     );
+	    const sections = document.querySelectorAll("section");
+  const observer = new IntersectionObserver(entries => {
+    entries.forEach(entry => {
+      if (entry.isIntersecting) entry.target.classList.add("visible");
+    });
+  }, { threshold: 0.1 });
+
+  sections.forEach(section => observer.observe(section));
   });
 
   function openLightbox(src) {
