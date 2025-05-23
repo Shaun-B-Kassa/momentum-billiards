@@ -441,6 +441,7 @@ body {
 }
 
 /* Hours & Rates Section (Full-width with rotating background) */
+/* Hours & Rates Section (Full-width, with distinct backgrounds for glass-card elements) */
 #hours-rates {
   width: 100vw;
   max-width: 100vw;
@@ -450,21 +451,47 @@ body {
   border-radius: 4px;
   box-shadow: 0 -1px 10px rgba(0, 188, 212, 0.2);
   box-sizing: border-box;
-  /* Rotating demo background */
-  background: linear-gradient(45deg, #3c3b6e, #1b2a49);
-  background-size: 200% 200%;
-  animation: rotateBackground2 20s linear infinite;
+  background: none; /* Remove rotating background from container */
 }
 
+#hours-rates h2 {
+  font-family: 'Bebas Neue', cursive;
+  font-size: 3rem;         /* Bigger section header */
+  margin-bottom: 2rem;
+  color: #f9a825;          /* Use a vibrant accent color */
+}
+
+/* Glass Cards inside Hours & Rates */
 #hours-rates .glass-card {
   display: inline-block;
   width: 48%;
   vertical-align: top;
   padding: 2rem;
+  margin: 1rem 0;    /* Optional: add a little vertical margin */
+  border-radius: 8px;
 }
+
+/* Applies different background colors to each glass card */
+#hours-rates .glass-card:nth-of-type(1) {
+  background-color: #1a237e;   /* Dark blue background */
+  color: #fff;
+}
+
+#hours-rates .glass-card:nth-of-type(2) {
+  background-color: #004d40;   /* Dark teal background */
+  color: #fff;
+}
+
+/* Section headers (h3) inside each glass card */
+#hours-rates .glass-card h3 {
+  font-size: 2.5rem;   /* Bigger than before for emphasis */
+  margin-bottom: 1rem;
+  color: #00bcd4;      /* Distinct header color */
+}
+
 @media (max-width: 768px) {
   #hours-rates .glass-card {
-    width: 100%; /* Stack on mobile */
+    width: 100%; /* Stack the cards on mobile */
   }
 }
 
