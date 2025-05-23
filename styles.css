@@ -525,3 +525,8 @@ body {
   animation: rotateBackground1 20s linear infinite;
 }
 
+
+#slideshow {
+  margin-top: 110px; /* Adjust based on actual header height */
+}
+
