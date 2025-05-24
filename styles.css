@@ -541,3 +541,90 @@ body {
   box-shadow: 0 2px 8px rgba(0, 188, 212, 0.2);
 }
 
+/* === VIBRANT NIGHTLIFE VIBES === */
+
+/* --- Typography Boost --- */
+h1, h2, h3, .caption-overlay {
+  font-family: 'Bebas Neue', cursive;
+  text-transform: uppercase;
+  letter-spacing: 2px;
+  text-shadow: 0 0 8px rgba(0, 255, 255, 0.2);
+}
+
+/* --- Neon Accent Gradient Border Glow --- */
+.glass-card {
+  border: 1px solid rgba(0, 255, 255, 0.1);
+  box-shadow: 0 0 8px rgba(0, 255, 255, 0.1);
+  transition: box-shadow 0.4s ease, transform 0.4s ease;
+}
+.glass-card:hover {
+  box-shadow: 0 0 20px rgba(0, 255, 255, 0.3), 0 0 40px rgba(0, 255, 255, 0.1);
+}
+
+/* --- Glowing Button Styles --- */
+.contact-form button,
+.map-button {
+  background: linear-gradient(45deg, #00e5ff, #00c853);
+  color: black;
+  font-weight: bold;
+  border: none;
+  border-radius: 10px;
+  box-shadow: 0 0 15px rgba(0, 255, 255, 0.4);
+  transition: all 0.3s ease;
+}
+.contact-form button:hover,
+.map-button:hover {
+  background: linear-gradient(45deg, #00e5ff, #69f0ae);
+  box-shadow: 0 0 25px rgba(0, 255, 255, 0.6);
+}
+
+/* --- Neon Text Pulse --- */
+.caption-overlay,
+.nav-links a:hover {
+  animation: neonPulse 1.5s infinite alternate;
+}
+@keyframes neonPulse {
+  0% { text-shadow: 0 0 5px #00f2ff; }
+  100% { text-shadow: 0 0 20px #00f2ff; }
+}
+
+/* --- Card Flicker Animation (for reviews or game modes) --- */
+.review-card {
+  position: relative;
+  animation: flickerGlow 3s infinite alternate;
+}
+@keyframes flickerGlow {
+  0% { box-shadow: 0 0 10px rgba(0,255,255,0.15); }
+  50% { box-shadow: 0 0 20px rgba(0,255,255,0.3); }
+  100% { box-shadow: 0 0 10px rgba(0,255,255,0.15); }
+}
+
+/* --- Slide Shadow Glow Effect --- */
+.swiper-slide img {
+  box-shadow: 0 0 20px rgba(0, 255, 255, 0.1);
+}
+
+/* --- Section Divider Neon Glow --- */
+section {
+  border-top: 2px solid #00f2ff;
+  box-shadow: 0 -1px 10px rgba(0, 242, 255, 0.2);
+}
+
+/* --- Footer Update --- */
+footer {
+  background: #111;
+  color: #aaa;
+  border-top: 2px solid #00f2ff;
+  box-shadow: 0 -4px 10px rgba(0, 255, 255, 0.1);
+}
+.footer-links a {
+  color: #00f2ff;
+  transition: color 0.3s ease;
+}
+.footer-links a:hover {
+  color: #69f0ae;
+}
+.hero-title, .caption-overlay {
+  font-family: 'Orbitron', sans-serif;
+}
+
