@@ -407,3 +407,88 @@ body.loaded #page-loader {
   }
 }
 
+/* Section Titles */
+.section-title {
+  font-family: 'Orbitron', sans-serif;
+  font-size: 2.25rem;
+  text-align: center;
+  margin-bottom: 2rem;
+  text-transform: uppercase;
+  letter-spacing: 1.5px;
+  position: relative;
+}
+
+.section-title.neon-glow {
+  color: #00fff7;
+  text-shadow: 0 0 5px #00fff7, 0 0 10px #00fff7, 0 0 20px #0ff;
+}
+
+/* Rates + Hours Grid */
+.rates-hours-grid {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 2rem;
+}
+
+.hours-list,
+.rates-list {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+.hours-list li,
+.rates-list li {
+  padding: 0.5rem 0;
+  font-size: 1rem;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+/* Reviews Carousel (Basic) */
+.reviews-container {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 1.5rem;
+  padding: 0 1rem;
+}
+
+.review-card {
+  flex: 1 1 280px;
+  max-width: 320px;
+  padding: 1.25rem;
+  border-radius: 16px;
+  background: rgba(255, 255, 255, 0.05);
+  backdrop-filter: blur(8px);
+  color: #fff;
+  box-shadow: 0 0 10px rgba(0, 255, 255, 0.2);
+  font-family: 'Open Sans', sans-serif;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.review-card:hover {
+  transform: scale(1.03);
+  box-shadow: 0 0 12px rgba(0, 255, 255, 0.6);
+}
+
+.review-card p {
+  font-size: 1.1rem;
+  font-style: italic;
+  margin-bottom: 0.75rem;
+}
+
+.review-card span {
+  font-weight: bold;
+  font-size: 0.95rem;
+  color: #00fff7;
+}
+
+/* Responsive Tweaks */
+@media (max-width: 768px) {
+  .rates-hours-grid {
+    flex-direction: column;
+    align-items: center;
+  }
+}
+
