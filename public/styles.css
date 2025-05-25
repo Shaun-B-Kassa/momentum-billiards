@@ -77,49 +77,11 @@ body {
   cursor: pointer;
 }
 
-/* Hero Section */
-.hero-intro {
-  background: linear-gradient(180deg, rgba(0,0,0,0.8), transparent), url('/images/hero-bg.jpg') center/cover no-repeat;
-  color: #fff;
-  padding: 10rem 1rem;
-  text-align: center;
-  position: relative;
-  z-index: 1;
-}
-
-.hero-title {
-  font-family: 'Rampart One', cursive;
-  font-size: 4rem;
-  letter-spacing: 0.1em;
-  text-transform: uppercase;
-  margin-bottom: 0.5rem;
-  color: #00ffc3;
-  text-shadow: 0 0 10px #00ffc3, 0 0 20px #00887a;
-}
-
-.hero-subtitle {
-  font-family: 'Orbitron', sans-serif;
-  font-size: 1.5rem;
-  color: #ffcc00;
-}
-
-.hero-content h1 {
-  font-family: 'Orbitron', sans-serif;
-  font-size: 4.5rem;
-  color: #ffcc00;
-  text-shadow: 0 0 10px #ffcc00, 0 0 20px #ff6600;
-}
-
-.hero-content p {
-  font-size: 1.25rem;
-  max-width: 700px;
-  margin: 0 auto;
-  color: #eee;
-}
 
 /* Slideshow */
 .slideshow-wrapper {
-  padding: 2rem 0;
+  padding: 4rem 0 2rem;
+  margin-top: 2rem;
 }
 
 .swiper {
