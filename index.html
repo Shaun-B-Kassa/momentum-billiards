@@ -6,18 +6,24 @@
   <title>Momentum Billiards - Pool Hall & Lounge</title>
   <meta name="description" content="Professional pool tables, relaxed vibes, and great music. Welcome to Momentum Billiards.">
 
-  <!-- Open Graph -->
+  <!-- Open Graph Meta Tags -->
   <meta property="og:title" content="Momentum Billiards - Pool Hall & Lounge" />
   <meta property="og:image" content="/images/preview.jpg" />
   <meta property="og:description" content="Experience pool like never before at Momentum Billiards." />
   <meta property="og:url" content="https://momentumbilliards.com" />
 
-  <!-- Styles -->
   <link rel="stylesheet" href="styles.css" />
   <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@10/swiper-bundle.min.css"/>
-  <link href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@400;600&family=Orbitron:wght@500&family=Roboto:wght@400;500;700&family=Bebas+Neue&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@400;600&family=Orbitron:wght@500&family=Roboto:wght@400;500;700&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Party+Let&display=swap" rel="stylesheet">
 </head>
 <body>
+
+<!-- Page Loader -->
+<div id="page-loader">
+  <div class="spinner"></div>
+</div>
 
 <header class="site-header">
   <div class="header-inner">
@@ -28,7 +34,7 @@
     <nav class="nav">
       <div class="nav-links" id="nav-links">
         <a href="#slideshow">Gallery</a>
-        <a href="#hours-rates">Rates & Hours</a>
+        <a href="#hours-rates">Rates &amp; Hours</a>
         <a href="#location">Location</a>
         <a href="#reviews">Reviews</a>
       </div>
@@ -37,15 +43,25 @@
 </header>
 
 <section class="hero-intro">
-  <h1 class="hero-title">Momentum Billiards</h1>
-  <p class="hero-subtitle">Pool Hall & Lounge — Oakland, CA</p>
+  <div class="hero-content fade-in-init">
+    <h1>Welcome to Momentum Billiards</h1>
+    <p>Professional pool tables, chill vibes, and premium sound. Oakland’s newest pool hall and lounge.</p>
+  </div>
 </section>
 
 <section id="slideshow" class="slideshow-wrapper">
   <div class="swiper mySwiper fullwidth-slider">
     <div class="swiper-wrapper" id="slide-container">
       <!-- Slides -->
-      <!-- [Your image slides unchanged] -->
+      <div class="swiper-slide"><img src="images/photo1.jpg" alt="Pool photo 1" onclick="openLightbox(this.src)" /></div>
+      <div class="swiper-slide"><img src="images/photo2.jpg" alt="Pool photo 2" onclick="openLightbox(this.src)" /></div>
+      <div class="swiper-slide"><img src="images/photo3.jpg" alt="Pool photo 3" onclick="openLightbox(this.src)" /></div>
+      <div class="swiper-slide"><img src="images/photo4.jpg" alt="Pool photo 4" onclick="openLightbox(this.src)" /></div>
+      <div class="swiper-slide"><img src="images/photo5.jpg" alt="Pool photo 5" onclick="openLightbox(this.src)" /></div>
+      <div class="swiper-slide"><img src="images/photo6.jpg" alt="Pool photo 6" onclick="openLightbox(this.src)" /></div>
+      <div class="swiper-slide"><img src="images/photo7.jpg" alt="Pool photo 7" onclick="openLightbox(this.src)" /></div>
+      <div class="swiper-slide"><img src="images/photo8.jpg" alt="Pool photo 8" onclick="openLightbox(this.src)" /></div>
+      <div class="swiper-slide"><img src="images/photo9.jpg" alt="Pool photo 9" onclick="openLightbox(this.src)" /></div>
     </div>
     <div class="swiper-button-prev"></div>
     <div class="swiper-button-next"></div>
@@ -59,38 +75,50 @@
 </div>
 
 <section id="hours-rates" class="info-section">
-  <h2>Hours & Rates</h2>
-  <div class="glass-card">
+  <h2>Hours &amp; Rates</h2>
+  <div class="glass-card fade-in-init">
     <h3>Hours</h3>
     <p><strong>Mon–Thu:</strong> 4:00 PM – 12:00 AM</p>
     <p><strong>Fri:</strong> 4:00 PM – 1:00 AM</p>
     <p><strong>Sat:</strong> 2:00 PM – 1:00 AM</p>
     <p><strong>Sun:</strong> 2:00 PM – 12:00 AM</p>
   </div>
-  <div class="glass-card">
+  <div class="glass-card fade-in-init">
     <h3>Table Rates</h3>
-    <p><strong>Initial Game Fee:</strong> $5 per group</p>
+    <p><strong>Initial Game Session Fee:</strong> $5 per group</p>
     <p><strong>1 Player:</strong> $10/hour</p>
     <p><strong>2–4 Players:</strong> $20/hour</p>
     <p><strong>5–8 Players:</strong> $30/hour</p>
   </div>
 </section>
 
-<section id="reviews" class="info-section">
+<section id="reviews">
   <h2>What Players Are Saying</h2>
   <div class="reviews-container">
-    <!-- [Your review cards unchanged] -->
+    <div class="review-card fade-in-init">
+      <p>"Awesome experience — brand new tables and super clean!"</p><strong>— Tinsaye Anulo</strong>
+    </div>
+    <div class="review-card fade-in-init">
+      <p>"Clean, nice vibe. Loved the setup!"</p><strong>— Elias Calel</strong>
+    </div>
+    <div class="review-card fade-in-init">
+      <p>"Great location, friendly crowd, amazing music."</p><strong>— Mykola Iakymakha</strong>
+    </div>
+    <div class="review-card fade-in-init">
+      <p>"The staff made us feel welcome. Definitely coming back!"</p><strong>— Mary</strong>
+    </div>
+    <div class="review-card fade-in-init">
+      <p>"One of the best pool spots in Oakland!"</p><strong>— Shaun Kassa</strong>
+    </div>
   </div>
 </section>
 
-<section id="location" class="info-section">
+<section id="location" class="info-section fade-in-init">
   <h2>Find Us</h2>
   <p class="address-highlight">📍 3815 Telegraph Ave, Oakland, CA 94609</p>
   <div class="map-container">
-    <iframe class="map-preview"
-      src="https://www.google.com/maps/embed?...">
-    </iframe>
-    <p>
+    <iframe class="map-preview" src="https://www.google.com/maps/embed?...your_map_url..." allowfullscreen loading="lazy"></iframe>
+    <p style="margin-top: 1rem;">
       <a class="map-button" href="https://www.google.com/maps/place/3815+Telegraph+Ave,+Oakland,+CA+94609" target="_blank">
         View on Google Maps
       </a>
@@ -111,15 +139,16 @@
   <p>&copy; 2025 Momentum Billiards</p>
   <p>Hours: Mon–Thu: 4PM–12AM | Fri: 4PM–1AM | Sat: 2PM–1AM | Sun: 2PM–12AM</p>
   <div class="footer-links">
-    <a href="#">Privacy Policy</a> |
-    <a href="#">Terms</a> |
-    <a href="#">FAQ</a>
+    <a href="#">Privacy Policy</a> | <a href="#">Terms</a> | <a href="#">FAQ</a>
   </div>
 </footer>
 
-<!-- Scripts -->
 <script src="https://cdn.jsdelivr.net/npm/swiper@10/swiper-bundle.min.js"></script>
 <script>
+  window.addEventListener("load", () => {
+    document.body.classList.add("loaded");
+  });
+
   document.addEventListener("DOMContentLoaded", () => {
     new Swiper(".mySwiper", {
       loop: true,
@@ -133,6 +162,25 @@
       }
     });
 
+    const observer = new IntersectionObserver(entries => {
+      entries.forEach(entry => {
+        if (entry.isIntersecting) {
+          entry.target.classList.add("visible");
+          observer.unobserve(entry.target);
+        }
+      });
+    }, { threshold: 0.15 });
+
+    document.querySelectorAll('.fade-in-init').forEach(el => observer.observe(el));
+
+    document.querySelectorAll("img").forEach(img => {
+      img.style.opacity = 0;
+      img.onload = () => {
+        img.style.transition = "opacity 1s ease";
+        img.style.opacity = 1;
+      };
+    });
+
     document.querySelector(".menu-toggle").addEventListener("click", () =>
       document.getElementById("nav-links").classList.toggle("open")
     );
@@ -142,14 +190,6 @@
         document.getElementById("nav-links").classList.remove("open")
       )
     );
-
-    const sections = document.querySelectorAll("section");
-    const observer = new IntersectionObserver(entries => {
-      entries.forEach(entry => {
-        if (entry.isIntersecting) entry.target.classList.add("visible");
-      });
-    }, { threshold: 0.1 });
-    sections.forEach(section => observer.observe(section));
   });
 
   function openLightbox(src) {
@@ -158,12 +198,10 @@
   }
 
   function closeLightbox() {
-    const lb = document.getElementById("lightbox");
-    lb.style.display = "none";
+    document.getElementById("lightbox").style.display = "none";
     document.getElementById("lightbox-img").src = "";
   }
 </script>
-
 </body>
 </html>
 
