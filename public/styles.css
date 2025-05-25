@@ -591,3 +591,48 @@ body.loaded #page-loader {
   transform: scale(1.02);
   box-shadow: 0 0 25px rgba(0, 255, 255, 0.5);
 }
+
+#yelp {
+  margin-top: 3rem;
+}
+
+.yelp-container {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 2rem;
+  align-items: flex-start;
+}
+
+.yelp-info {
+  flex: 1 1 250px;
+  max-width: 300px;
+  text-align: left;
+}
+
+.yelp-logo {
+  width: 120px;
+  margin-bottom: 1rem;
+}
+
+.yelp-reviews {
+  flex: 2 1 400px;
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+}
+
+.yelp-review {
+  padding: 1rem;
+  font-size: 0.95rem;
+  background: rgba(255, 255, 255, 0.05);
+  border-radius: 10px;
+  border: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+.yelp-review span {
+  display: block;
+  margin-top: 0.5rem;
+  font-size: 0.85rem;
+  color: #ccc;
+}
+
