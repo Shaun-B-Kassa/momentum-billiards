@@ -7,11 +7,19 @@
 
 body {
   font-family: 'Open Sans', sans-serif;
-  background: linear-gradient(135deg, #0d0d0d, #1a1a1a);
+  background: linear-gradient(-45deg, #0f0f0f, #1a1a1a, #141414);
+  background-size: 400% 400%;
+  animation: bg-shift 20s ease infinite;
   color: #f2f2f2;
   line-height: 1.6;
   scroll-behavior: smooth;
   overflow-x: hidden;
+}
+
+@keyframes bg-shift {
+  0% { background-position: 0% 50%; }
+  50% { background-position: 100% 50%; }
+  100% { background-position: 0% 50%; }
 }
 
 /* Header */
@@ -25,6 +33,8 @@ body {
   display: flex;
   justify-content: space-between;
   align-items: center;
+  border-bottom: 2px solid #00ffc3;
+  box-shadow: 0 0 10px rgba(0, 255, 195, 0.3);
 }
 
 .header-inner {
@@ -54,7 +64,8 @@ body {
 }
 
 .nav-links a:hover {
-  color: #ffcc00;
+  color: #00ffc3;
+  text-shadow: 0 0 5px #00ffc3;
 }
 
 .menu-toggle {
@@ -68,23 +79,42 @@ body {
 
 /* Hero Section */
 .hero-intro {
+  background: linear-gradient(180deg, rgba(0,0,0,0.8), transparent), url('/images/hero-bg.jpg') center/cover no-repeat;
+  color: #fff;
+  padding: 10rem 1rem;
   text-align: center;
-  padding: 6rem 1rem 4rem;
-  background: linear-gradient(180deg, rgba(0,0,0,0.8), transparent);
+  position: relative;
+  z-index: 1;
 }
 
 .hero-title {
-  font-family: 'Bebas Neue', sans-serif;
+  font-family: 'Rampart One', cursive;
   font-size: 4rem;
   letter-spacing: 0.1em;
   text-transform: uppercase;
   margin-bottom: 0.5rem;
+  color: #00ffc3;
+  text-shadow: 0 0 10px #00ffc3, 0 0 20px #00887a;
 }
 
 .hero-subtitle {
   font-family: 'Orbitron', sans-serif;
   font-size: 1.5rem;
   color: #ffcc00;
+}
+
+.hero-content h1 {
+  font-family: 'Orbitron', sans-serif;
+  font-size: 4.5rem;
+  color: #ffcc00;
+  text-shadow: 0 0 10px #ffcc00, 0 0 20px #ff6600;
+}
+
+.hero-content p {
+  font-size: 1.25rem;
+  max-width: 700px;
+  margin: 0 auto;
+  color: #eee;
 }
 
 /* Slideshow */
@@ -97,10 +127,32 @@ body {
   height: 500px;
 }
 
+.swiper-slide {
+  position: relative;
+}
+
 .swiper-slide img {
   width: 100%;
   height: 100%;
   object-fit: cover;
+  transition: transform 0.5s ease;
+  cursor: pointer;
+}
+
+.swiper-slide:hover img {
+  transform: scale(1.05);
+}
+
+.swiper-slide::after {
+  content: attr(alt);
+  position: absolute;
+  bottom: 1rem;
+  left: 1rem;
+  background: rgba(0, 0, 0, 0.6);
+  color: #fff;
+  padding: 0.3rem 0.6rem;
+  font-size: 0.9rem;
+  border-radius: 0.5rem;
 }
 
 .swiper-button-prev,
@@ -148,20 +200,22 @@ body {
 }
 
 .info-section h2 {
-  font-family: 'Bebas Neue', sans-serif;
+  font-family: 'Rampart One', cursive;
   font-size: 2.5rem;
-  color: #fff;
+  color: #00ffc3;
+  text-shadow: 0 0 10px #00ffc3, 0 0 20px #00887a;
   margin-bottom: 2rem;
 }
 
 .glass-card {
-  background: rgba(255, 255, 255, 0.05);
+  background: rgba(255, 255, 255, 0.08);
+  backdrop-filter: blur(12px);
   border-radius: 1rem;
   padding: 2rem;
   margin: 1rem auto;
   max-width: 500px;
-  box-shadow: 0 0 20px rgba(255, 255, 255, 0.05);
-  border: 1px solid rgba(255, 255, 255, 0.1);
+  box-shadow: 0 0 20px rgba(0, 255, 195, 0.1);
+  border: 1px solid rgba(0, 255, 195, 0.3);
 }
 
 /* Reviews */
@@ -271,61 +325,6 @@ footer {
   color: #fff;
 }
 
-/* Responsive */
-@media (max-width: 768px) {
-  .nav-links {
-    display: none;
-    flex-direction: column;
-    background: rgba(20, 20, 20, 0.95);
-    position: absolute;
-    top: 100%;
-    right: 0;
-    padding: 1rem 2rem;
-    border-radius: 0 0 0 1rem;
-    box-shadow: -5px 5px 20px rgba(0, 0, 0, 0.3);
-  }
-
-  .nav-links.open {
-    display: flex;
-  }
-
-  .menu-toggle {
-    display: block;
-  }
-
-  .hero-title {
-    font-size: 3rem;
-  }
-
-  .swiper {
-    height: 300px;
-  }
-}
-
-/* Parallax Hero */
-.hero-intro {
-  background: url('/images/hero-bg.jpg') center center / cover no-repeat fixed;
-  color: #fff;
-  padding: 10rem 1rem;
-  text-align: center;
-  position: relative;
-  z-index: 1;
-}
-
-.hero-content h1 {
-  font-family: 'Orbitron', sans-serif;
-  font-size: 3rem;
-  margin-bottom: 1rem;
-  text-shadow: 0 2px 10px rgba(0, 0, 0, 0.8);
-}
-
-.hero-content p {
-  font-size: 1.25rem;
-  max-width: 700px;
-  margin: 0 auto;
-  color: #eee;
-}
-
 /* Fade-in Animation */
 .fade-in-init {
   opacity: 0;
@@ -366,5 +365,45 @@ footer {
 body.loaded #page-loader {
   opacity: 0;
   pointer-events: none;
+}
+
+/* Responsive & Mobile Nav Upgrade */
+@media (max-width: 768px) {
+  .nav-links {
+    position: fixed;
+    top: 0; right: -100%;
+    width: 80%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.95);
+    flex-direction: column;
+    padding: 2rem;
+    transition: right 0.4s ease;
+    border-left: 2px solid #00ffc3;
+    box-shadow: -5px 0 20px rgba(0, 255, 195, 0.3);
+    z-index: 1001;
+  }
+
+  .nav-links.open {
+    right: 0;
+  }
+
+  .nav-links a {
+    padding: 1rem 0;
+    font-size: 1.5rem;
+    color: #00ffc3;
+    text-align: right;
+  }
+
+  .menu-toggle {
+    display: block;
+  }
+
+  .hero-title {
+    font-size: 3rem;
+  }
+
+  .swiper {
+    height: 300px;
+  }
 }
 
