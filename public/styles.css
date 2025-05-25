@@ -44,8 +44,11 @@ body {
 }
 
 .site-logo {
-  max-height: 60px;
+  max-height: 80px;
+  width: auto;
+  height: auto;
 }
+
 
 .nav {
   margin-left: auto;
@@ -80,7 +83,7 @@ body {
 
 /* Slideshow */
 .slideshow-wrapper {
-  padding: 4rem 0 2rem;
+  padding: 0 0 2rem;
 }
 
 .swiper {
@@ -491,4 +494,10 @@ body.loaded #page-loader {
   transform: translateY(0);
 }
 
+
+/* Remove accidental spacing between header and first section */
+.site-header + * {
+  margin-top: 0 !important;
+  padding-top: 0 !important;
+}
 
