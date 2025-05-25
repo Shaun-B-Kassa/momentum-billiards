@@ -213,8 +213,16 @@ body {
 
 /* Map Section */
 .map-container {
-  margin-top: 1rem;
+  margin: 2rem auto 0;
+  max-width: 800px;
+  padding: 1rem;
+  background: rgba(255, 255, 255, 0.04);
+  border-radius: 1rem;
+  backdrop-filter: blur(10px);
+  box-shadow: 0 0 15px rgba(0, 255, 195, 0.15);
+  border: 1px solid rgba(0, 255, 195, 0.2);
 }
+
 
 .map-preview {
   width: 100%;
@@ -241,9 +249,13 @@ body {
 }
 
 .address-highlight {
-  font-size: 1.2rem;
-  color: #ccc;
+  font-size: 1.25rem;
+  color: #00ffc3;
+  text-shadow: 0 0 5px #00ffc3;
+  margin-bottom: 1rem;
+  font-weight: 600;
 }
+
 
 /* Social Media */
 #social-media {
@@ -459,6 +471,13 @@ body.loaded #page-loader {
     flex-direction: column;
     align-items: center;
   }
+    .map-preview {
+    height: 250px;
+  }
+
+  .map-container {
+    padding: 1rem 0.5rem;
+  }
 }
 
 .hour-rate-card {
@@ -471,4 +490,5 @@ body.loaded #page-loader {
   opacity: 1;
   transform: translateY(0);
 }
+
 
