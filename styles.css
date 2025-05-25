@@ -1,147 +1,304 @@
-/* Reset and base styles */
+/* Reset and Base Styles */
 * {
+  box-sizing: border-box;
   margin: 0;
   padding: 0;
-  box-sizing: border-box;
 }
 
-html, body {
-  font-family: 'Roboto', sans-serif;
-  font-size: 16px;
-  color: #eee;
-  background-color: #111;
+body {
+  font-family: 'Open Sans', sans-serif;
+  background: linear-gradient(135deg, #0d0d0d, #1a1a1a);
+  color: #f2f2f2;
   line-height: 1.6;
   scroll-behavior: smooth;
+  overflow-x: hidden;
 }
 
-/* Typography */
-h1, h2, h3, h4, h5, h6 {
-  font-family: 'Orbitron', sans-serif;
-  color: #00bcd4;
-  text-transform: uppercase;
-  letter-spacing: 1px;
-  margin-bottom: 1rem;
-}
-
-section h2 {
-  font-size: 2.25rem;
-  border-bottom: 2px solid #00bcd4;
-  padding-bottom: 0.5rem;
-  margin-bottom: 1.5rem;
-  text-align: center;
-}
-
-h3 {
-  font-size: 1.5rem;
-  margin-bottom: 0.75rem;
-}
-
-p {
-  font-family: 'Open Sans', sans-serif;
-  margin-bottom: 1rem;
-}
-
-/* Layout sections */
-section {
-  padding: 4rem 2rem;
-  max-width: 1200px;
-  margin: auto;
-}
-
-/* Glass card style */
-.glass-card {
-  background: rgba(255, 255, 255, 0.05);
-  backdrop-filter: blur(12px);
-  border: 1px solid rgba(255, 255, 255, 0.08);
-  border-radius: 16px;
-  padding: 2rem;
-  margin-bottom: 2rem;
-  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.3);
-}
-
-.glass-card p {
-  line-height: 1.7;
-  font-size: 1rem;
-  margin-bottom: 0.75rem;
-}
-
-/* Swiper Carousel */
-.swiper {
-  width: 100%;
-  padding: 2rem 0;
-}
-
-.swiper-slide {
+/* Header */
+.site-header {
+  position: sticky;
+  top: 0;
+  z-index: 1000;
+  background: rgba(10, 10, 10, 0.8);
+  backdrop-filter: blur(10px);
+  padding: 1rem 2rem;
   display: flex;
-  justify-content: center;
+  justify-content: space-between;
   align-items: center;
 }
 
-/* Review cards */
-.review-card {
-  background: rgba(255, 255, 255, 0.05);
-  backdrop-filter: blur(10px);
-  border-radius: 12px;
-  padding: 1.5rem;
-  max-width: 350px;
-  box-shadow: 0 4px 16px rgba(0, 0, 0, 0.2);
-  text-align: left;
-  margin: auto;
+.header-inner {
+  display: flex;
+  align-items: center;
+  width: 100%;
 }
 
-.review-card p {
-  line-height: 1.7;
-  font-size: 1rem;
-  margin-bottom: 0.75rem;
+.site-logo {
+  max-height: 60px;
 }
 
-.review-card .stars {
-  color: #fcd34d;
+.nav {
+  margin-left: auto;
+}
+
+.nav-links {
+  display: flex;
+  gap: 1.5rem;
+}
+
+.nav-links a {
+  text-decoration: none;
+  color: #fff;
+  font-weight: 500;
+  transition: color 0.3s ease;
+}
+
+.nav-links a:hover {
+  color: #ffcc00;
+}
+
+.menu-toggle {
+  display: none;
+  font-size: 2rem;
+  background: none;
+  border: none;
+  color: white;
+  cursor: pointer;
+}
+
+/* Hero Section */
+.hero-intro {
+  text-align: center;
+  padding: 6rem 1rem 4rem;
+  background: linear-gradient(180deg, rgba(0,0,0,0.8), transparent);
+}
+
+.hero-title {
+  font-family: 'Bebas Neue', sans-serif;
+  font-size: 4rem;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
   margin-bottom: 0.5rem;
 }
 
-.review-card .author {
+.hero-subtitle {
+  font-family: 'Orbitron', sans-serif;
+  font-size: 1.5rem;
+  color: #ffcc00;
+}
+
+/* Slideshow */
+.slideshow-wrapper {
+  padding: 2rem 0;
+}
+
+.swiper {
+  width: 100%;
+  height: 500px;
+}
+
+.swiper-slide img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.swiper-button-prev,
+.swiper-button-next {
+  color: white;
+}
+
+/* Lightbox */
+.lightbox {
+  position: fixed;
+  display: none;
+  justify-content: center;
+  align-items: center;
+  top: 0; left: 0; right: 0; bottom: 0;
+  background-color: rgba(0, 0, 0, 0.85);
+  z-index: 2000;
+}
+
+.lightbox img {
+  max-width: 90%;
+  max-height: 90%;
+}
+
+.lightbox .close {
+  position: absolute;
+  top: 20px;
+  right: 30px;
+  font-size: 3rem;
+  color: white;
+  cursor: pointer;
+}
+
+/* Info Sections */
+.info-section {
+  padding: 4rem 2rem;
+  text-align: center;
+  opacity: 0;
+  transform: translateY(20px);
+  transition: all 0.8s ease-out;
+}
+
+.info-section.visible {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+.info-section h2 {
+  font-family: 'Bebas Neue', sans-serif;
+  font-size: 2.5rem;
+  color: #fff;
+  margin-bottom: 2rem;
+}
+
+.glass-card {
+  background: rgba(255, 255, 255, 0.05);
+  border-radius: 1rem;
+  padding: 2rem;
+  margin: 1rem auto;
+  max-width: 500px;
+  box-shadow: 0 0 20px rgba(255, 255, 255, 0.05);
+  border: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+/* Reviews */
+.reviews-container {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 2rem;
+  justify-content: center;
+  margin-top: 2rem;
+}
+
+.review-card {
+  background: rgba(255, 255, 255, 0.05);
+  padding: 1.5rem;
+  border-radius: 1rem;
+  width: 300px;
+  text-align: left;
+  font-size: 0.95rem;
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  transition: transform 0.3s;
+}
+
+.review-card:hover {
+  transform: translateY(-5px);
+}
+
+/* Map Section */
+.map-container {
+  margin-top: 1rem;
+}
+
+.map-preview {
+  width: 100%;
+  height: 300px;
+  border: none;
+  border-radius: 0.5rem;
+  box-shadow: 0 0 10px rgba(0,0,0,0.3);
+}
+
+.map-button {
+  display: inline-block;
+  margin-top: 1rem;
+  padding: 0.75rem 1.5rem;
+  background: #ffcc00;
+  color: #000;
+  font-weight: bold;
+  border-radius: 999px;
+  text-decoration: none;
+  transition: background 0.3s ease;
+}
+
+.map-button:hover {
+  background: #e6b800;
+}
+
+.address-highlight {
+  font-size: 1.2rem;
   color: #ccc;
-  font-size: 0.9rem;
+}
+
+/* Social Media */
+#social-media {
+  padding: 3rem 2rem;
+  text-align: center;
+}
+
+.social-icons {
+  display: flex;
+  justify-content: center;
+  gap: 2rem;
+  margin-top: 1rem;
+}
+
+.social-icons img {
+  width: 36px;
+  height: 36px;
+  filter: brightness(1.5);
+  transition: transform 0.3s ease;
+}
+
+.social-icons img:hover {
+  transform: scale(1.1);
 }
 
 /* Footer */
 footer {
-  background: rgba(0, 0, 0, 0.8);
-  padding: 2rem;
   text-align: center;
-  color: #ccc;
+  padding: 2rem;
   font-size: 0.9rem;
+  background: rgba(0,0,0,0.6);
+  backdrop-filter: blur(10px);
+  border-top: 1px solid rgba(255,255,255,0.1);
+  color: #999;
 }
 
 .footer-links {
-  margin-top: 1rem;
+  margin-top: 0.5rem;
 }
 
 .footer-links a {
-  color: #00bcd4;
-  margin: 0 0.5rem;
+  color: #999;
   text-decoration: none;
+  margin: 0 0.5rem;
 }
 
 .footer-links a:hover {
-  text-decoration: underline;
+  color: #fff;
 }
 
-/* Responsive adjustments */
+/* Responsive */
 @media (max-width: 768px) {
-  section h2 {
-    font-size: 1.75rem;
+  .nav-links {
+    display: none;
+    flex-direction: column;
+    background: rgba(20, 20, 20, 0.95);
+    position: absolute;
+    top: 100%;
+    right: 0;
+    padding: 1rem 2rem;
+    border-radius: 0 0 0 1rem;
+    box-shadow: -5px 5px 20px rgba(0, 0, 0, 0.3);
   }
 
-  h3 {
-    font-size: 1.25rem;
+  .nav-links.open {
+    display: flex;
   }
 
-  p,
-  .glass-card p,
-  .review-card p {
-    font-size: 0.95rem;
+  .menu-toggle {
+    display: block;
+  }
+
+  .hero-title {
+    font-size: 3rem;
+  }
+
+  .swiper {
+    height: 300px;
   }
 }
 
