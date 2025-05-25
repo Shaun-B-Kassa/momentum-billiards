@@ -69,40 +69,46 @@
 </div>
 
 <section id="hours-rates" class="info-section fade-in-init">
-  <h2>Hours &amp; Rates</h2>
-  <div class="glass-card fade-in-init">
-    <h3>Hours</h3>
-    <p><strong>Mon–Thu:</strong> 4:00 PM – 12:00 AM</p>
-    <p><strong>Fri:</strong> 4:00 PM – 1:00 AM</p>
-    <p><strong>Sat:</strong> 2:00 PM – 1:00 AM</p>
-    <p><strong>Sun:</strong> 2:00 PM – 12:00 AM</p>
-  </div>
-  <div class="glass-card fade-in-init">
-    <h3>Table Rates</h3>
-    <p><strong>Initial Game Session Fee:</strong> $5 per group</p>
-    <p><strong>1 Player:</strong> $10/hour</p>
-    <p><strong>2–4 Players:</strong> $20/hour</p>
-    <p><strong>5–8 Players:</strong> $30/hour</p>
+  <h2 class="section-title neon-glow">Hours &amp; Rates</h2>
+  <div class="rates-hours-grid">
+    <div class="glass-card hour-rate-card">
+      <h3>Hours</h3>
+      <ul class="hours-list">
+        <li><strong>Mon–Thu:</strong> 4:00 PM – 12:00 AM</li>
+        <li><strong>Fri:</strong> 4:00 PM – 1:00 AM</li>
+        <li><strong>Sat:</strong> 2:00 PM – 1:00 AM</li>
+        <li><strong>Sun:</strong> 2:00 PM – 12:00 AM</li>
+      </ul>
+    </div>
+    <div class="glass-card hour-rate-card">
+      <h3>Table Rates</h3>
+      <ul class="rates-list">
+        <li><strong>Initial Session:</strong> $5 per group</li>
+        <li><strong>1 Player:</strong> $10/hour</li>
+        <li><strong>2–4 Players:</strong> $20/hour</li>
+        <li><strong>5–8 Players:</strong> $30/hour</li>
+      </ul>
+    </div>
   </div>
 </section>
 
 <section id="reviews" class="info-section fade-in-init">
-  <h2>What Players Are Saying</h2>
+  <h2 class="section-title neon-glow">What Players Are Saying</h2>
   <div class="reviews-container">
-    <div class="review-card fade-in-init">
-      <p>"Awesome experience — brand new tables and super clean!"</p><strong>— Tinsaye Anulo</strong>
+    <div class="review-card hour-rate-card">
+      <p>"Awesome experience — brand new tables and super clean!"</p><span>— Tinsaye Anulo</span>
     </div>
-    <div class="review-card fade-in-init">
-      <p>"Clean, nice vibe. Loved the setup!"</p><strong>— Elias Calel</strong>
+    <div class="review-card hour-rate-card">
+      <p>"Clean, nice vibe. Loved the setup!"</p><span>— Elias Calel</span>
     </div>
-    <div class="review-card fade-in-init">
-      <p>"Great location, friendly crowd, amazing music."</p><strong>— Mykola Iakymakha</strong>
+    <div class="review-card hour-rate-card">
+      <p>"Great location, friendly crowd, amazing music."</p><span>— Mykola Iakymakha</span>
     </div>
-    <div class="review-card fade-in-init">
-      <p>"The staff made us feel welcome. Definitely coming back!"</p><strong>— Mary</strong>
+    <div class="review-card hour-rate-card">
+      <p>"The staff made us feel welcome. Definitely coming back!"</p><span>— Mary</span>
     </div>
-    <div class="review-card fade-in-init">
-      <p>"One of the best pool spots in Oakland!"</p><strong>— Shaun Kassa</strong>
+    <div class="review-card hour-rate-card">
+      <p>"One of the best pool spots in Oakland!"</p><span>— Shaun Kassa</span>
     </div>
   </div>
 </section>
@@ -154,6 +160,7 @@
   });
 
   document.addEventListener("DOMContentLoaded", () => {
+    // Initialize Swiper
     new Swiper(".mySwiper", {
       loop: true,
       autoplay: { delay: 5000 },
@@ -166,17 +173,23 @@
       }
     });
 
+    // Staggered reveal for .hour-rate-card and .review-card
     const observer = new IntersectionObserver(entries => {
-      entries.forEach(entry => {
+      entries.forEach((entry, index) => {
         if (entry.isIntersecting) {
-          entry.target.classList.add("visible");
+          setTimeout(() => {
+            entry.target.classList.add("visible");
+          }, index * 100); // stagger animation
           observer.unobserve(entry.target);
         }
       });
     }, { threshold: 0.15 });
 
-    document.querySelectorAll('.fade-in-init').forEach(el => observer.observe(el));
+    // Observe all fade-in and card elements
+    document.querySelectorAll('.fade-in-init, .hour-rate-card, .review-card')
+      .forEach(el => observer.observe(el));
 
+    // Image fade-in on load
     document.querySelectorAll("img").forEach(img => {
       img.style.opacity = 0;
       img.onload = () => {
@@ -185,10 +198,12 @@
       };
     });
 
+    // Mobile menu toggle
     document.querySelector(".menu-toggle").addEventListener("click", () =>
       document.getElementById("nav-links").classList.toggle("open")
     );
 
+    // Close mobile menu on link click
     document.querySelectorAll("#nav-links a").forEach(link =>
       link.addEventListener("click", () =>
         document.getElementById("nav-links").classList.remove("open")
@@ -206,6 +221,7 @@
     document.getElementById("lightbox-img").src = "";
   }
 </script>
+
 </body>
 </html>
 
