@@ -535,3 +535,40 @@ body.loaded #page-loader {
   100% { transform: translateX(100%) rotate(25deg); }
 }
 
+/* Desktop improvements for Hours & Rates */
+@media (min-width: 769px) {
+  .rates-hours-grid {
+    max-width: 1100px;
+    margin: 0 auto;
+    justify-content: space-between;
+    gap: 1.5rem;
+  }
+
+  .hour-rate-card {
+    flex: 1;
+    min-width: 450px;
+    max-width: 500px;
+  }
+
+  .hours-list li,
+  .rates-list li {
+    font-size: 1.25rem;
+    padding: 0.75rem 0;
+  }
+
+  .glass-card.hour-rate-card h3 {
+    font-size: 1.75rem;
+    margin-bottom: 1rem;
+    color: #00ffc3;
+    text-shadow: 0 0 10px #00ffc3;
+  }
+}
+.glass-card.hour-rate-card {
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.glass-card.hour-rate-card:hover {
+  transform: scale(1.02);
+  box-shadow: 0 0 25px rgba(0, 255, 255, 0.5);
+}
+
