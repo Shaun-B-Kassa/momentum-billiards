@@ -44,9 +44,15 @@ body {
 }
 
 .site-logo {
-  max-height: 80px;
+  max-height: 120px;
   width: auto;
   height: auto;
+  transition: transform 0.3s ease;
+  filter: drop-shadow(0 0 10px #00ffc3);
+}
+
+.site-logo:hover {
+  transform: scale(1.05);
 }
 
 
@@ -377,6 +383,10 @@ body.loaded #page-loader {
   .nav-links.open {
     right: 0;
   }
+  .site-logo {
+  max-height: 90px;
+}
+
 
 .nav-links a {
   font-family: 'Orbitron', sans-serif;
